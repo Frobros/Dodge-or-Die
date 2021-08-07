@@ -33,7 +33,7 @@ public class InputHandler : MonoBehaviour
             direction1 += Vector2.right;
         }
         direction1 = direction1.magnitude > 0.5f ? Vector2.ClampMagnitude(direction1, 1f) : Vector2.zero;
-        PlayerController player = Array.Find(FindObjectsOfType<PlayerController>(), p => p.player ==Player.PLAYER_1);
+        PlayerMovement player = Array.Find(FindObjectsOfType<PlayerMovement>(), p => p.player ==Player.PLAYER_1);
         player.direction = direction1;
     }
 
@@ -58,7 +58,7 @@ public class InputHandler : MonoBehaviour
             direction2 += Vector2.right;
         }
         direction2 = direction2.magnitude > 0.5f ? Vector2.ClampMagnitude(direction2, 1f) : Vector2.zero;
-        PlayerController player = Array.Find(FindObjectsOfType<PlayerController>(), p => p.player == Player.PLAYER_2);
+        PlayerMovement player = Array.Find(FindObjectsOfType<PlayerMovement>(), p => p.player == Player.PLAYER_2);
         player.direction = direction2;
     }
 }

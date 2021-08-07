@@ -7,7 +7,7 @@ public class Ball : MonoBehaviour
         dragSpeed;
     public Player controlledBy;
 
-    private PlayerController player1, player2;
+    private PlayerMovement movement1, movement2;
     private Rigidbody2D rb;
     
 
@@ -15,20 +15,20 @@ public class Ball : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = Vector2.right;
-        player1 = Array.Find(FindObjectsOfType<PlayerController>(), p => p.player == Player.PLAYER_1);
-        player2 = Array.Find(FindObjectsOfType<PlayerController>(), p => p.player == Player.PLAYER_2);
+        movement1 = Array.Find(FindObjectsOfType<PlayerMovement>(), p => p.player == Player.PLAYER_1);
+        movement2 = Array.Find(FindObjectsOfType<PlayerMovement>(), p => p.player == Player.PLAYER_2);
     }
 
     void Update()
     {
         Vector2 drag = Vector2.zero;
-        if (controlledBy == Player.PLAYER_1)
+        if (controlledBy == Player.PLAYER_1 && !movement1.isHit)
         {
-            drag = dragSpeed * player1.direction;
+            drag = dragSpeed * movement1.direction;
         }
-        else if (controlledBy == Player.PLAYER_2)
+        else if (controlledBy == Player.PLAYER_2 && !movement2.isHit)
         {
-            drag = dragSpeed * player2.direction;
+            drag = dragSpeed * movement2.direction;
         }
         Vector2 velocity = rb.velocity + drag;
         rb.velocity = speed * velocity.normalized;
@@ -53,10 +53,13 @@ public class Ball : MonoBehaviour
         {
             controlledBy = Player.NONE;
         }
-        PlayerController player = collision.transform.GetComponent<PlayerController>();
+
+        // If Player Hit
+        PlayerMovement player = collision.transform.GetComponent<PlayerMovement>();
         if (player != null)
         {
             FindObjectOfType<Field>().SetPoint(player.player);
+            player.Hit();
         }
     }
 }
