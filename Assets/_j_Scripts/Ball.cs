@@ -9,11 +9,13 @@ public class Ball : MonoBehaviour
     public Material matPlayer1, matPlayer2, matBoth, matNone;
     private PlayerMovement movement1, movement2;
     private Rigidbody2D rb;
-
     private Renderer ren;
+
+    private TrailRenderer trail;
 
     private void Start()
     {
+        trail = GetComponentInChildren<TrailRenderer>();
         ren = GetComponent<Renderer>();
         rb = GetComponent<Rigidbody2D>();
         movement1 = Array.Find(FindObjectsOfType<PlayerMovement>(), p => p.player == Player.PLAYER_1);
@@ -33,54 +35,54 @@ public class Ball : MonoBehaviour
         {
             drag += dragSpeed * movement2.direction;
         }
+        Debug.Log(drag.magnitude);
+
+        if (drag.magnitude > 0)
+        {
+            trail.time = Mathf.Clamp(trail.time + 0.01f, 0f, 0.5f);
+        }
+        else
+        {
+            trail.time = Mathf.Clamp(trail.time - 0.01f, 0f, 0.5f);
+        }
+
         Vector2 velocity = rb.velocity + drag;
         rb.velocity = speed * velocity.normalized;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (controlledBy != Player.BOTH)
-        {
-            Target t = collision.transform.GetComponent<Target>();
-            if (t != null)
-            {
-                if (t.player == Player.PLAYER_1)
-                    SetControlledBy(Player.PLAYER_2);
-                if (t.player == Player.PLAYER_2)
-                    SetControlledBy(Player.PLAYER_1);
-            }
-        }
-    }
-
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (controlledBy == Player.BOTH)
+        Target t = collision.transform.GetComponent<Target>();
+        if (t != null)
         {
-            Target t = collision.transform.GetComponent<Target>();
-            if (t != null)
-            {
-                if (t.player == Player.PLAYER_1)
-                    SetControlledBy(Player.PLAYER_1);
-                if (t.player == Player.PLAYER_2)
-                    SetControlledBy(Player.PLAYER_2);
-            }
+            if (t.player == Player.PLAYER_1)
+                SetControlledBy(Player.PLAYER_1);
+            if (t.player == Player.PLAYER_2)
+                SetControlledBy(Player.PLAYER_2);
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        PlayerMovement player = collision.transform.GetComponent<PlayerMovement>();
         Target t = collision.transform.GetComponent<Target>();
+
+        // SFX: Hit Last Wall
         if (t != null)
         {
             SetControlledBy(Player.NONE);
+            StartCoroutine(FindObjectOfType<ShakeCamera>().Shake(0.1f, 0.2f));
         }
-
-        // If Player Hit
-        PlayerMovement player = collision.transform.GetComponent<PlayerMovement>();
-        if (player != null)
+        // SFX: Hit Player
+        else if (player != null)
         {
             FindObjectOfType<Field>().SetPoint(player.player);
-            player.Hit();
+            player.Hit(transform.position);
+        }
+        // SFX: Hit Anything Else
+        else
+        {
+            StartCoroutine(FindObjectOfType<ShakeCamera>().Shake(0.1f, 0.2f));
         }
     }
 

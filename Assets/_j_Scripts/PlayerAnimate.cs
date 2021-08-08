@@ -18,12 +18,18 @@ public class PlayerAnimate : MonoBehaviour
         anim.SetBool("IsRunning", isRunning);
         if (isRunning)
         {
-            transform.rotation = Quaternion.LookRotation((Vector3)movement.direction, -Vector3.forward);
+            LookAt(movement.direction);
         }
     }
 
-    internal void Hit()
+    internal void Hit(Vector3 hitDirection)
     {
+        LookAt(hitDirection);
         anim.SetTrigger("IsHit");
+    }
+
+    public void LookAt(Vector3 direction)
+    {
+        transform.rotation = Quaternion.LookRotation(direction, -Vector3.forward);
     }
 }

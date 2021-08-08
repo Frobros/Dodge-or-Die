@@ -86,7 +86,8 @@ MonoBehaviour:
   player: 1
   speed: {x: 10, y: 10}
   freezeUntil: 0
-  freezeFor: 1
+  freezeFor: 0.5
+  damping: 0.95
   isHit: 0
 --- !u!1001 &1874873225656398928
 PrefabInstance:

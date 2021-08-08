@@ -11,6 +11,7 @@ public class StageManager : MonoBehaviour
 
     private void Start()
     {
+        // MUSIC: Start Theme
         winUI.SetActive(false);
         text = winUI.GetComponentInChildren<Text>();
     }
@@ -31,6 +32,7 @@ public class StageManager : MonoBehaviour
 
     internal void Win(Player player)
     {
+        // SFX: Play win sound
         Time.timeScale = 0f;
         winUI.SetActive(true);
         string theWinnerIs = player == Player.PLAYER_1
