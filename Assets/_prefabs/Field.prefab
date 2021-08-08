@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2967146927869256784}
   - component: {fileID: 2967146927869256786}
-  - component: {fileID: 2967146927869256785}
+  - component: {fileID: 7751136610453913331}
   m_Layer: 0
-  m_Name: G2
+  m_Name: W1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,12 +25,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2967146927869256791}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2967146928169723748}
-  m_RootOrder: 4
+  m_Father: {fileID: 2967146929867953895}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2967146927869256786
 BoxCollider2D:
@@ -58,7 +58,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2967146927869256785
+--- !u!114 &7751136610453913331
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -67,10 +67,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2967146927869256791}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9cab455e5b2b044cbab180ca308733a, type: 3}
+  m_Script: {fileID: 11500000, guid: 522ae7475d945104fa64d5574f05b1a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: 1
+  player: 0
 --- !u!1 &2967146927911496587
 GameObject:
   m_ObjectHideFlags: 0
@@ -81,9 +81,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2967146927911496596}
   - component: {fileID: 2967146927911496598}
-  - component: {fileID: 2967146927911496597}
+  - component: {fileID: 267152862933921406}
   m_Layer: 0
-  m_Name: G1
+  m_Name: W2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,12 +96,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2967146927911496587}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2967146928169723748}
-  m_RootOrder: 3
+  m_Father: {fileID: 2967146929867953895}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2967146927911496598
 BoxCollider2D:
@@ -129,7 +129,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2967146927911496597
+--- !u!114 &267152862933921406
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,10 +138,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2967146927911496587}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9cab455e5b2b044cbab180ca308733a, type: 3}
+  m_Script: {fileID: 11500000, guid: 522ae7475d945104fa64d5574f05b1a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: 0
+  player: 1
 --- !u!1 &2967146928169723672
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,7 +153,7 @@ GameObject:
   - component: {fileID: 2967146928169723748}
   - component: {fileID: 2967146928169723675}
   - component: {fileID: 2967146928169723674}
-  - component: {fileID: 2967146928169723673}
+  - component: {fileID: 4228245164349653461}
   m_Layer: 0
   m_Name: Field
   m_TagString: Untagged
@@ -175,8 +175,6 @@ Transform:
   - {fileID: 2967146929867953895}
   - {fileID: 2967146929307031646}
   - {fileID: 2967146929827512601}
-  - {fileID: 2967146927911496596}
-  - {fileID: 2967146927869256784}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -230,7 +228,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2967146928169723673
+--- !u!114 &4228245164349653461
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -239,12 +237,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2967146928169723672}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a98dcd4a1500124bbf71e5368e7e253, type: 3}
+  m_Script: {fileID: 11500000, guid: 649dbc6234a7aed459d2878f34092450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  field1: {fileID: 2967146929307031646}
-  field2: {fileID: 2967146929827512601}
-  pointsToWin: 5
+  field1: {fileID: 0}
+  field2: {fileID: 0}
+  pointsToWin: 2
   points: 0
 --- !u!1 &2967146928781484108
 GameObject:
@@ -256,7 +254,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2967146928781484109}
   - component: {fileID: 2967146928781484110}
-  - component: {fileID: 2967146928781484111}
+  - component: {fileID: 2840949620401375025}
   m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
@@ -304,7 +302,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2967146928781484111
+--- !u!114 &2840949620401375025
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -313,7 +311,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2967146928781484108}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9cab455e5b2b044cbab180ca308733a, type: 3}
+  m_Script: {fileID: 11500000, guid: 522ae7475d945104fa64d5574f05b1a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: 1
@@ -437,7 +435,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2967146929804172443}
   - component: {fileID: 2967146929804172516}
-  - component: {fileID: 2967146929804172517}
+  - component: {fileID: 6354298365438521291}
   m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
@@ -485,7 +483,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2967146929804172517
+--- !u!114 &6354298365438521291
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -494,7 +492,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2967146929804172442}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9cab455e5b2b044cbab180ca308733a, type: 3}
+  m_Script: {fileID: 11500000, guid: 522ae7475d945104fa64d5574f05b1a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: 0
@@ -636,7 +634,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 2967146927911496596}
+  - {fileID: 2967146927869256784}
   m_Father: {fileID: 2967146928169723748}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

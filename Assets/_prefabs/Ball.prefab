@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7626059095055497640}
   - component: {fileID: 7626059095055497637}
   - component: {fileID: 7626059095055497641}
-  - component: {fileID: 7626059095055497646}
+  - component: {fileID: 2725165111393812060}
   m_Layer: 10
   m_Name: Ball
   m_TagString: Untagged
@@ -115,14 +115,14 @@ CircleCollider2D:
   m_GameObject: {fileID: 7626059095055497647}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: b9f8f10ac5c8f0b44a1bd5a96f2d4f2e, type: 2}
+  m_Material: {fileID: 6200000, guid: 749aeee1f6f2e7c41b7425c635515874, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &7626059095055497646
+--- !u!114 &2725165111393812060
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,9 +131,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7626059095055497647}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bd75ccc57bd3674d88ed4a99643098c, type: 3}
+  m_Script: {fileID: 11500000, guid: ee527ae03d39f154baa37b97a85d6875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  dragSpeed: 1
-  controlledBy: 0
+  dragSpeed: 0.1
+  controlledBy: 2
