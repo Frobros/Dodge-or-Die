@@ -281,7 +281,6 @@ StyleCopReport.xml
 *.iobj
 *.pch
 *.ipdb
-*.meta
 *.pgc
 *.pgd
 *.rsp
