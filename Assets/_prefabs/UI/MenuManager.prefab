@@ -730,7 +730,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6149385733585997588}
         m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
         m_MethodName: ResumeGame
         m_Mode: 1
@@ -1028,5 +1028,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdfeae6c769f3d1418900d0f9b6d805b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 6699269493179982870}
+  pauseMenu: {fileID: 0}
   isPaused: 0
