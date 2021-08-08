@@ -240,9 +240,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 649dbc6234a7aed459d2878f34092450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  field1: {fileID: 0}
-  field2: {fileID: 0}
-  pointsToWin: 2
+  field1: {fileID: 2967146929307031646}
+  field2: {fileID: 2967146929827512601}
+  pointsToWin: 5
   points: 0
 --- !u!1 &2967146928781484108
 GameObject:
