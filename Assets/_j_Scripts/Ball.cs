@@ -10,11 +10,11 @@ public class Ball : MonoBehaviour
     private PlayerMovement movement1, movement2;
     private Rigidbody2D rb;
 
-    private Renderer renderer;
+    private Renderer ren;
 
     private void Start()
     {
-        renderer = GetComponent<Renderer>();
+        ren = GetComponent<Renderer>();
         rb = GetComponent<Rigidbody2D>();
         movement1 = Array.Find(FindObjectsOfType<PlayerMovement>(), p => p.player == Player.PLAYER_1);
         movement2 = Array.Find(FindObjectsOfType<PlayerMovement>(), p => p.player == Player.PLAYER_2);
@@ -90,16 +90,16 @@ public class Ball : MonoBehaviour
         switch (controlledBy)
         {
             case Player.PLAYER_1:
-                renderer.material = matPlayer1;
+                ren.material = matPlayer1;
                 break;
             case Player.PLAYER_2:
-                renderer.material = matPlayer2;
+                ren.material = matPlayer2;
                 break;
             case Player.BOTH:
-                renderer.material = matBoth;
+                ren.material = matBoth;
                 break;
             case Player.NONE:
-                renderer.material = matNone;
+                ren.material = matNone;
                 break;
             default:
                 break;

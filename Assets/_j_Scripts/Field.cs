@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class Field : MonoBehaviour
 {
+    StageManager stageManager;
     public Transform field1;
     public Transform field2;
     public int pointsToWin = 2;
@@ -12,6 +13,7 @@ public class Field : MonoBehaviour
 
     private void Start()
     {
+        stageManager = FindObjectOfType<StageManager>();
         field1.localPosition = new Vector3(-0.25f, 0f, -0.01f);
         field2.localPosition = new Vector3(0.25f, 0f, -0.01f);
 
@@ -22,16 +24,6 @@ public class Field : MonoBehaviour
 
     public void SetPoint(Player player)
     {
-
-        if (player == Player.PLAYER_2)
-        {
-            points++;
-
-        }
-        else
-        {
-            points--;
-        }
         StartCoroutine(LerpField(player));
     }
 
@@ -39,6 +31,15 @@ public class Field : MonoBehaviour
     {
         if (!isChanging)
         {
+            if (player == Player.PLAYER_2)
+            {
+                points++;
+
+            }
+            else
+            {
+                points--;
+            }
             isChanging = true;
             bool done = false;
             float changeIn = 0.3f;
@@ -90,9 +91,8 @@ public class Field : MonoBehaviour
 
             if (Mathf.Abs(points) >= pointsToWin)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                stageManager.Win(player);
             }
-
         }
     }
 }
