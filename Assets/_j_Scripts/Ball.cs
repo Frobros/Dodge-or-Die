@@ -27,13 +27,11 @@ public class Ball : MonoBehaviour
         if ((controlledBy == Player.BOTH || controlledBy == Player.PLAYER_1) && !movement1.isHit)
         {
             drag += dragSpeed * movement1.direction;
-            Debug.Log(drag);
         }
         
         if ((controlledBy == Player.BOTH  || controlledBy == Player.PLAYER_2) && !movement2.isHit)
         {
             drag += dragSpeed * movement2.direction;
-            Debug.Log(drag);
         }
         Vector2 velocity = rb.velocity + drag;
         rb.velocity = speed * velocity.normalized;
