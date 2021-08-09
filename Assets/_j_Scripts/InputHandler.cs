@@ -7,9 +7,11 @@ public class InputHandler : MonoBehaviour
     public Vector2 direction2 = Vector2.zero;
     void Update()
     {
-        MoveDirectionPlayer1();
-        MoveDirectionPlayer2();
-
+        if (!FindObjectOfType<MenuScript>().isPaused)
+        {
+            MoveDirectionPlayer1();
+            MoveDirectionPlayer2();
+        }
     }
 
     private void MoveDirectionPlayer1()

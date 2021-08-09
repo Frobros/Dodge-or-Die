@@ -11,6 +11,7 @@ public class StageManager : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1f;
         // MUSIC: Start Theme
         winUI.SetActive(false);
         text = winUI.GetComponentInChildren<Text>();

@@ -9,9 +9,12 @@ public class ShakeCamera : MonoBehaviour
         float elapsed = 0f;
         while (elapsed < duration)
         {
-            float x = originalPos.x + Random.Range(-1f, 1f) * magnitude;
-            float y = originalPos.y + Random.Range(-1f, 1f) * magnitude;
-            transform.localPosition = new Vector3(x, y, originalPos.z);
+            if (!FindObjectOfType<MenuScript>().isPaused && Time.timeScale != 0f)
+            {
+                float x = originalPos.x + Random.Range(-1f, 1f) * magnitude;
+                float y = originalPos.y + Random.Range(-1f, 1f) * magnitude;
+                transform.localPosition = new Vector3(x, y, originalPos.z);
+            }
             elapsed += Time.deltaTime;
             yield return null;
         }
