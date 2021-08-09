@@ -239,6 +239,276 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!1001 &230444685936016030
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 230444687132231776, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: m_Name
+      value: MasterAudio
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: playListExpanded
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: musicPlaylists.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: audioSourceTemplates.Array.data[3]
+      value: 
+      objectReference: {fileID: 100000, guid: 0bae4fc0f5d347a4b96036e3412482cb, type: 2}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: audioSourceTemplates.Array.data[5]
+      value: 
+      objectReference: {fileID: 100000, guid: c72d873e2c96ce440b65e83d6fb26efd, type: 2}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: audioSourceTemplates.Array.data[9]
+      value: 
+      objectReference: {fileID: 100000, guid: d73b1cd0b6df3d84c8b036e9b3e511ea, type: 2}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: musicPlaylists.Array.data[0].isExpanded
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: musicPlaylists.Array.data[1].isExpanded
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: musicPlaylists.Array.data[1].bulkEditMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: musicPlaylists.Array.data[1].playlistName
+      value: Match Theme
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: musicPlaylists.Array.data[0].MusicSettings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: musicPlaylists.Array.data[1].MusicSettings.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: musicPlaylists.Array.data[0].MusicSettings.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d2e8dea054b8dd4a9b05383aa2b81de, type: 3}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: musicPlaylists.Array.data[0].MusicSettings.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d2e8dea054b8dd4a9b05383aa2b81de, type: 3}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: musicPlaylists.Array.data[0].MusicSettings.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d2e8dea054b8dd4a9b05383aa2b81de, type: 3}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: musicPlaylists.Array.data[0].MusicSettings.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d2e8dea054b8dd4a9b05383aa2b81de, type: 3}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: musicPlaylists.Array.data[0].MusicSettings.Array.data[1].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: musicPlaylists.Array.data[0].MusicSettings.Array.data[2].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: musicPlaylists.Array.data[0].MusicSettings.Array.data[3].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: musicPlaylists.Array.data[0].MusicSettings.Array.data[0].isLoop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: musicPlaylists.Array.data[0].MusicSettings.Array.data[1].isLoop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: musicPlaylists.Array.data[0].MusicSettings.Array.data[1].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: musicPlaylists.Array.data[0].MusicSettings.Array.data[2].isLoop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: musicPlaylists.Array.data[0].MusicSettings.Array.data[2].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: musicPlaylists.Array.data[0].MusicSettings.Array.data[3].isLoop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: musicPlaylists.Array.data[0].MusicSettings.Array.data[3].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: musicPlaylists.Array.data[1].MusicSettings.Array.data[2].isLoop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: musicPlaylists.Array.data[0].MusicSettings.Array.data[0].songName
+      value: Match3
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: musicPlaylists.Array.data[0].MusicSettings.Array.data[1].songName
+      value: Match3
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: musicPlaylists.Array.data[0].MusicSettings.Array.data[2].songName
+      value: Match3
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: musicPlaylists.Array.data[0].MusicSettings.Array.data[3].songName
+      value: Match3
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: musicPlaylists.Array.data[0].MusicSettings.Array.data[1].isChecked
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: musicPlaylists.Array.data[0].MusicSettings.Array.data[2].isChecked
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: musicPlaylists.Array.data[0].MusicSettings.Array.data[3].isChecked
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: musicPlaylists.Array.data[0].MusicSettings.Array.data[1].isExpanded
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: musicPlaylists.Array.data[0].MusicSettings.Array.data[2].isExpanded
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: musicPlaylists.Array.data[0].MusicSettings.Array.data[3].isExpanded
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: musicPlaylists.Array.data[0].MusicSettings.Array.data[1].metadataExpanded
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: musicPlaylists.Array.data[0].MusicSettings.Array.data[2].metadataExpanded
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132231777, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: musicPlaylists.Array.data[0].MusicSettings.Array.data[3].metadataExpanded
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132232094, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132232094, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132232094, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132232094, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132232094, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132232094, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132232094, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132232094, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132232094, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132232094, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 230444687132232094, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aafd7dd9ae75ea24a9f65c24d578a63e, type: 3}
+--- !u!1001 &370218460923358821
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 370218460913317896, guid: 7d827b00a7a4add4f8f800dc3606991b, type: 3}
+      propertyPath: m_Name
+      value: PlaylistController
+      objectReference: {fileID: 0}
+    - target: {fileID: 370218460913317908, guid: 7d827b00a7a4add4f8f800dc3606991b, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 370218460913317908, guid: 7d827b00a7a4add4f8f800dc3606991b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 370218460913317908, guid: 7d827b00a7a4add4f8f800dc3606991b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 370218460913317908, guid: 7d827b00a7a4add4f8f800dc3606991b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 370218460913317908, guid: 7d827b00a7a4add4f8f800dc3606991b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 370218460913317908, guid: 7d827b00a7a4add4f8f800dc3606991b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 370218460913317908, guid: 7d827b00a7a4add4f8f800dc3606991b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 370218460913317908, guid: 7d827b00a7a4add4f8f800dc3606991b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 370218460913317908, guid: 7d827b00a7a4add4f8f800dc3606991b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 370218460913317908, guid: 7d827b00a7a4add4f8f800dc3606991b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 370218460913317908, guid: 7d827b00a7a4add4f8f800dc3606991b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7d827b00a7a4add4f8f800dc3606991b, type: 3}
 --- !u!1001 &2402042541268586844
 PrefabInstance:
   m_ObjectHideFlags: 0
