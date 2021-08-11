@@ -37,8 +37,8 @@ public class StageManager : MonoBehaviour
         Time.timeScale = 0f;
         winUI.SetActive(true);
         string theWinnerIs = player == Player.PLAYER_1
-            ? "BLUE"
-            : "RED";
+            ? "RED"
+            : "BLUE";
         theWinnerIs += " WINS";
         text.text = theWinnerIs;
         isGameDone = true;
