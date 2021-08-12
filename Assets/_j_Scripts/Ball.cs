@@ -103,6 +103,7 @@ public class Ball : MonoBehaviour
                 break;
             case Player.NONE:
                 ren.material = matNone;
+                trail.time = 0f;
                 break;
             default:
                 break;
