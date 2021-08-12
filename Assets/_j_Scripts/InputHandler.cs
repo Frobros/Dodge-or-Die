@@ -5,9 +5,15 @@ public class InputHandler : MonoBehaviour
 {
     public Vector2 direction1 = Vector2.zero;
     public Vector2 direction2 = Vector2.zero;
+    private MenuScript menu;
+
+    private void Start()
+    {
+        menu = FindObjectOfType<MenuScript>();
+    }
     void Update()
     {
-        if (!FindObjectOfType<MenuScript>().isPaused && !FindObjectOfType<StageManager>().isGameDone)
+        if (!menu.isPaused && !menu.isGameOver)
         {
             MoveDirectionPlayer1();
             MoveDirectionPlayer2();
@@ -35,7 +41,7 @@ public class InputHandler : MonoBehaviour
             direction1 += Vector2.right;
         }
         direction1 = direction1.magnitude > 0.5f ? Vector2.ClampMagnitude(direction1, 1f) : Vector2.zero;
-        PlayerMovement player = Array.Find(FindObjectsOfType<PlayerMovement>(), p => p.player ==Player.PLAYER_1);
+        PlayerMovement player = Array.Find(FindObjectsOfType<PlayerMovement>(), p => p.player == Player.PLAYER_1);
         player.direction = direction1;
     }
 
