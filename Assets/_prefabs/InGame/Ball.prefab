@@ -277,7 +277,7 @@ MonoBehaviour:
   speed: 12
   dragSpeed: 50
   controlledBy: 2
-  matPlayer1: {fileID: 2100000, guid: 6cf76574d2dedc14e94dbdc9c2413043, type: 2}
-  matPlayer2: {fileID: 2100000, guid: b51f3138b6387ca4c97685f65cf3b11e, type: 2}
-  matBoth: {fileID: 2100000, guid: 72de4dc01daecfb428c4157016f55182, type: 2}
-  matNone: {fileID: 2100000, guid: 96265d24dbc73864c961f72b9b2dd412, type: 2}
+  matPlayer1: {fileID: 2100000, guid: b51f3138b6387ca4c97685f65cf3b11e, type: 2}
+  matPlayer2: {fileID: 2100000, guid: 6cf76574d2dedc14e94dbdc9c2413043, type: 2}
+  matBoth: {fileID: 2100000, guid: 96265d24dbc73864c961f72b9b2dd412, type: 2}
+  matNone: {fileID: 2100000, guid: 72de4dc01daecfb428c4157016f55182, type: 2}
