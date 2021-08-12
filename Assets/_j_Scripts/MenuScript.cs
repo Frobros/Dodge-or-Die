@@ -75,8 +75,8 @@ public class MenuScript : MonoBehaviour
         buttonRestart.SetActive(active);
         textWin.gameObject.SetActive(active);
         string theWinnerIs = player == Player.PLAYER_1
-            ? "PINK"
-            : "PURPLE";
+            ? "RED"
+            : "BLUE";
         theWinnerIs += " WINS";
         textWin.text = theWinnerIs;
         isGameOver = true;
