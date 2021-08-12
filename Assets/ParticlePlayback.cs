@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 
-public class TimeIndependentPlayback : MonoBehaviour
+public class ParticlePlayback : MonoBehaviour
 {
     bool active = false;
     ParticleSystem particles;
@@ -11,7 +10,6 @@ public class TimeIndependentPlayback : MonoBehaviour
     {
         particles = GetComponent<ParticleSystem>();
         _time = FindObjectOfType<IndependentDeltaTime>();
-        Debug.Log(particles.time);
     }
 
     private void Update()
@@ -19,7 +17,6 @@ public class TimeIndependentPlayback : MonoBehaviour
         if (active)
         {
             particles.Simulate(_time.deltaTime, true, false);
-            Debug.Log(particles.time);
         }
 
     }
