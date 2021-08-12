@@ -3,8 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class TitleHandler : MonoBehaviour
 {
+    private void Start()
+    {
+        Application.targetFrameRate = 30;
+    }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Return))
