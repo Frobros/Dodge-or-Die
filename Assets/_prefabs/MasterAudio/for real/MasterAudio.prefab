@@ -2616,102 +2616,10 @@ MonoBehaviour:
   newGroupSpatialType: 1
   newGroupSpatialBlend: 1
   musicPlaylists:
-  - isExpanded: 0
+  - isExpanded: 1
     playlistName: Main Menu Music
     songTransitionType: 1
     MusicSettings:
-    - alias: 
-      audLocation: 0
-      clip: {fileID: 8300000, guid: 7256227546d68824db4c4df787df8bb8, type: 3}
-      songName: MainMenu4
-      resourceFileName: 
-      volume: 1
-      pitch: 1
-      isExpanded: 1
-      isLoop: 1
-      isChecked: 1
-      metadataStringValues: []
-      metadataBoolValues: []
-      metadataIntValues: []
-      metadataFloatValues: []
-      metadataExpanded: 1
-      songStartTimeMode: 0
-      customStartTime: 0
-      customStartTimeMax: 0
-      lastKnownTimePoint: 0
-      wasLastKnownTimePointSet: 0
-      songIndex: 0
-      songStartedEventExpanded: 0
-      songStartedCustomEvent: 
-      songChangedEventExpanded: 0
-      songChangedCustomEvent: 
-    bulkLocationMode: 0
-    crossfadeMode: 0
-    crossFadeTime: 1
-    fadeInFirstSong: 0
-    fadeOutLastSong: 0
-    bulkEditMode: 0
-    isTemporary: 0
-    showMetadata: 0
-    songMetadataProps: []
-    newMetadataPropName: PropertyName
-    newMetadataPropType: 1
-    newMetadataPropRequired: 1
-    newMetadataPropCanHaveMult: 0
-  - isExpanded: 0
-    playlistName: Match Theme
-    songTransitionType: 1
-    MusicSettings:
-    - alias: 
-      audLocation: 0
-      clip: {fileID: 8300000, guid: 6633a09563c451d4286729d5269fa751, type: 3}
-      songName: Match1
-      resourceFileName: 
-      volume: 1
-      pitch: 1
-      isExpanded: 1
-      isLoop: 0
-      isChecked: 1
-      metadataStringValues: []
-      metadataBoolValues: []
-      metadataIntValues: []
-      metadataFloatValues: []
-      metadataExpanded: 1
-      songStartTimeMode: 0
-      customStartTime: 0
-      customStartTimeMax: 0
-      lastKnownTimePoint: 0
-      wasLastKnownTimePointSet: 0
-      songIndex: 0
-      songStartedEventExpanded: 0
-      songStartedCustomEvent: 
-      songChangedEventExpanded: 0
-      songChangedCustomEvent: 
-    - alias: 
-      audLocation: 0
-      clip: {fileID: 8300000, guid: a8d0168c1a15a904281bd4cfdc9d3cec, type: 3}
-      songName: Match2
-      resourceFileName: 
-      volume: 1
-      pitch: 1
-      isExpanded: 1
-      isLoop: 0
-      isChecked: 1
-      metadataStringValues: []
-      metadataBoolValues: []
-      metadataIntValues: []
-      metadataFloatValues: []
-      metadataExpanded: 1
-      songStartTimeMode: 0
-      customStartTime: 0
-      customStartTimeMax: 0
-      lastKnownTimePoint: 0
-      wasLastKnownTimePointSet: 0
-      songIndex: 0
-      songStartedEventExpanded: 0
-      songStartedCustomEvent: 
-      songChangedEventExpanded: 0
-      songChangedCustomEvent: 
     - alias: 
       audLocation: 0
       clip: {fileID: 8300000, guid: 6d2e8dea054b8dd4a9b05383aa2b81de, type: 3}
@@ -2720,32 +2628,7 @@ MonoBehaviour:
       volume: 1
       pitch: 1
       isExpanded: 1
-      isLoop: 0
-      isChecked: 1
-      metadataStringValues: []
-      metadataBoolValues: []
-      metadataIntValues: []
-      metadataFloatValues: []
-      metadataExpanded: 1
-      songStartTimeMode: 0
-      customStartTime: 0
-      customStartTimeMax: 0
-      lastKnownTimePoint: 0
-      wasLastKnownTimePointSet: 0
-      songIndex: 0
-      songStartedEventExpanded: 0
-      songStartedCustomEvent: 
-      songChangedEventExpanded: 0
-      songChangedCustomEvent: 
-    - alias: 
-      audLocation: 0
-      clip: {fileID: 8300000, guid: a8d0168c1a15a904281bd4cfdc9d3cec, type: 3}
-      songName: Match2
-      resourceFileName: 
-      volume: 1
-      pitch: 1
-      isExpanded: 1
-      isLoop: 0
+      isLoop: 1
       isChecked: 1
       metadataStringValues: []
       metadataBoolValues: []

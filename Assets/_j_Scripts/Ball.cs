@@ -28,14 +28,12 @@ public class Ball : MonoBehaviour
         Vector2 drag = Vector2.zero;
         if ((controlledBy == Player.BOTH || controlledBy == Player.PLAYER_1) && !movement1.isHit)
         {
-            drag += dragSpeed * movement1.direction;
+            drag += dragSpeed * Time.deltaTime * movement1.direction;
         }
-        
         if ((controlledBy == Player.BOTH  || controlledBy == Player.PLAYER_2) && !movement2.isHit)
         {
-            drag += dragSpeed * movement2.direction;
+            drag += dragSpeed * Time.deltaTime * movement2.direction;
         }
-        Debug.Log(drag.magnitude);
 
         if (drag.magnitude > 0)
         {
