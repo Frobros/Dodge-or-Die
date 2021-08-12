@@ -203,7 +203,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 15303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 96265d24dbc73864c961f72b9b2dd412, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -281,3 +281,5 @@ MonoBehaviour:
   matPlayer2: {fileID: 2100000, guid: 6cf76574d2dedc14e94dbdc9c2413043, type: 2}
   matBoth: {fileID: 2100000, guid: 96265d24dbc73864c961f72b9b2dd412, type: 2}
   matNone: {fileID: 2100000, guid: 72de4dc01daecfb428c4157016f55182, type: 2}
+  matTrailPlayer1: {fileID: 2100000, guid: ff950394225704a40b5de8ece8063037, type: 2}
+  matTrailPlayer2: {fileID: 2100000, guid: b0a5761ee547c1542b5168b16d103af4, type: 2}
