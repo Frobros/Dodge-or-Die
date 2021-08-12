@@ -37,7 +37,6 @@ public class PlayerMovement : MonoBehaviour
         Vector2 hitDirection = transform.position - position;
         rb.velocity = Vector2.zero;
         rb.AddForce(10f * hitDirection, ForceMode2D.Impulse);
-        Debug.Log("FREEZE!");
         freezeUntil = Time.time + freezeFor;
         isHit = true;
         StartCoroutine(FindObjectOfType<ShakeCamera>().Shake(0.6f, freezeFor));
