@@ -274,7 +274,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee527ae03d39f154baa37b97a85d6875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  acceleration: 0.003
   speed: 12
+  maxSpeed: 24
   dragSpeed: 50
   controlledBy: 2
   matPlayer1: {fileID: 2100000, guid: b51f3138b6387ca4c97685f65cf3b11e, type: 2}

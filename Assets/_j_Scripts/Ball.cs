@@ -3,7 +3,10 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    public float speed,
+    public float
+        acceleration,
+        speed,
+        maxSpeed,
         dragSpeed;
     public Player controlledBy;
     public Material matPlayer1, matPlayer2, matBoth, matNone;
@@ -26,6 +29,11 @@ public class Ball : MonoBehaviour
 
     void Update()
     {
+        if (speed < maxSpeed)
+        {
+            speed = Mathf.Clamp(speed + speed * acceleration * Time.deltaTime, 0f, maxSpeed);
+            dragSpeed = dragSpeed + dragSpeed * acceleration * Time.deltaTime;
+        }
         Vector2 drag = Vector2.zero;
         if ((controlledBy == Player.BOTH || controlledBy == Player.PLAYER_1) && !movement1.isHit)
         {
@@ -77,11 +85,12 @@ public class Ball : MonoBehaviour
         {
             FindObjectOfType<Field>().SetPoint(player.player);
             player.Hit(transform.position);
+            StartCoroutine(FindObjectOfType<ShakeCamera>().Shake(0.6f, 0.5f * player.freezeFor));
         }
         // SFX: Hit Anything Else
         else
         {
-            StartCoroutine(FindObjectOfType<ShakeCamera>().Shake(0.1f, 0.2f));
+            StartCoroutine(FindObjectOfType<ShakeCamera>().Shake(0.05f, 0.2f));
         }
     }
 

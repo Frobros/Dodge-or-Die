@@ -39,7 +39,6 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(10f * hitDirection, ForceMode2D.Impulse);
         freezeUntil = Time.time + freezeFor;
         isHit = true;
-        StartCoroutine(FindObjectOfType<ShakeCamera>().Shake(0.6f, freezeFor));
         GetComponentInChildren<PlayerAnimate>().Hit(-hitDirection);
     }
 
