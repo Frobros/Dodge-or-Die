@@ -277,10 +277,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 379697511}
     m_Modifications:
-    - target: {fileID: 6910578052489726536, guid: 38286beff12233048aa374f0b69debfd, type: 3}
-      propertyPath: winUI
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 6910578052489726537, guid: 38286beff12233048aa374f0b69debfd, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -541,10 +537,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4228245164349653461, guid: 187fa27ec7b2e71478fa9b0002b5d7ff, type: 3}
-      propertyPath: pointsToWin
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 187fa27ec7b2e71478fa9b0002b5d7ff, type: 3}
 --- !u!1001 &1210381897
@@ -602,12 +594,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: InputHandler
       objectReference: {fileID: 0}
-    - target: {fileID: 7084856241444981206, guid: ca98bfe4a04ad2d4aa029461fe850011, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7084856241444981201, guid: ca98bfe4a04ad2d4aa029461fe850011, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca98bfe4a04ad2d4aa029461fe850011, type: 3}
 --- !u!4 &1210381898 stripped
 Transform:
@@ -780,25 +767,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 401943bb9f817474f8ad14c64522e234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1818738122 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6910578052489726539, guid: 38286beff12233048aa374f0b69debfd, type: 3}
-  m_PrefabInstance: {fileID: 732972337}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1818738123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1818738122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e6e2717bfbbd644cb5f1f7ed8ce57fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  time: 0
-  deltaTime: 0
 --- !u!1001 &828592174098048848
 PrefabInstance:
   m_ObjectHideFlags: 0
