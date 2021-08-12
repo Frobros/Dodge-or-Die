@@ -8,6 +8,7 @@ public class StageManager : MonoBehaviour
     Text text;
     bool isGameDone = false,
         isLoading = false;
+        
 
     private void Start()
     {
@@ -33,14 +34,16 @@ public class StageManager : MonoBehaviour
 
     internal void Win(Player player)
     {
+        
         // SFX: Play win sound
         Time.timeScale = 0f;
         winUI.SetActive(true);
         string theWinnerIs = player == Player.PLAYER_1
-            ? "BLUE"
-            : "RED";
+            ? "RED"
+            : "BLUE";
         theWinnerIs += " WINS";
         text.text = theWinnerIs;
         isGameDone = true;
+        
     }
 }
