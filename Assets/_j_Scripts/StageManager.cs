@@ -1,13 +1,14 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class StageManager : MonoBehaviour
 {
     public GameObject winUI;
     Text text;
-    bool isGameDone = false,
-        isLoading = false;
+    public bool isGameDone = false;
+    bool isLoading = false;
         
 
     private void Start()
@@ -44,6 +45,12 @@ public class StageManager : MonoBehaviour
         theWinnerIs += " WINS";
         text.text = theWinnerIs;
         isGameDone = true;
-        
+
+        // Play Particles
+        TimeIndependentPlayback particle = FindObjectOfType<TimeIndependentPlayback>();
+        GameObject playerObj = Array.Find(FindObjectsOfType<PlayerMovement>(), p => p.player == player).gameObject;
+        particle.transform.position = playerObj.transform.position;
+        particle.PlayParticles();
+        Destroy(playerObj);
     }
 }
