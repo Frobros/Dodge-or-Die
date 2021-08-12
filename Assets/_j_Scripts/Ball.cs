@@ -7,6 +7,7 @@ public class Ball : MonoBehaviour
         dragSpeed;
     public Player controlledBy;
     public Material matPlayer1, matPlayer2, matBoth, matNone;
+    public Material matTrailPlayer1, matTrailPlayer2;
     private PlayerMovement movement1, movement2;
     private Rigidbody2D rb;
     private Renderer ren;
@@ -91,9 +92,11 @@ public class Ball : MonoBehaviour
         {
             case Player.PLAYER_1:
                 ren.material = matPlayer1;
+                trail.material = matTrailPlayer1;
                 break;
             case Player.PLAYER_2:
                 ren.material = matPlayer2;
+                trail.material = matTrailPlayer2;
                 break;
             case Player.BOTH:
                 ren.material = matBoth;
