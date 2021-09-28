@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -11,7 +12,6 @@ public class MenuScript : MonoBehaviour
     public Text textWin;
     public bool isPaused, isGameOver;
 
-    // Start is called before the first frame update
     void Start()
     {
         overlay.SetActive(false);
@@ -21,41 +21,28 @@ public class MenuScript : MonoBehaviour
         textWin.gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnPause(InputAction.CallbackContext context)
     {
-        if (!isGameOver && Input.GetKeyDown(KeyCode.Escape))
+        if (!isGameOver)
         {
-            if (isPaused)
-            {
-                ResumeGame();
-            }
-            else
-            {
-                PauseGame();
-            }
+            if (isPaused) ResumeGame();
+            else PauseGame();
         }
     }
 
     public void PauseGame()
     {
-        if (!isGameOver)
-        {
-            SetPauseMenuActive(true);
-            Time.timeScale = 0f;
-            isPaused = true;
-        }
+        SetPauseMenuActive(true);
+        Time.timeScale = 0f;
+        isPaused = true;
     }
 
 
     public void ResumeGame()
     {
-        if (!isGameOver)
-        {
-            SetPauseMenuActive(false);
-            Time.timeScale = 1f;
-            isPaused = false;
-        }
+        SetPauseMenuActive(false);
+        Time.timeScale = 1f;
+        isPaused = false;
     }
 
     private void SetPauseMenuActive(bool active)
@@ -67,14 +54,14 @@ public class MenuScript : MonoBehaviour
         buttonRestart.SetActive(active);
     }
 
-    public void SetWinMenuActive(bool active, Player player)
+    public void SetWinMenuActive(bool active, PlayerType player)
     {
         overlay.SetActive(false);
         buttonResume.SetActive(false);
         buttonQuit.SetActive(active);
         buttonRestart.SetActive(active);
         textWin.gameObject.SetActive(active);
-        string theWinnerIs = player == Player.PLAYER_1
+        string theWinnerIs = player == PlayerType.PLAYER_1
             ? "RED"
             : "BLUE";
         theWinnerIs += " WINS";

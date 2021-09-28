@@ -22,16 +22,16 @@ public class Field : MonoBehaviour
     }
 
 
-    public void SetPoint(Player player)
+    public void SetPoint(PlayerType player)
     {
         StartCoroutine(LerpField(player));
     }
 
-    IEnumerator LerpField(Player player)
+    IEnumerator LerpField(PlayerType player)
     {
         if (!isChanging)
         {
-            if (player == Player.PLAYER_2)
+            if (player == PlayerType.PLAYER_2)
             {
                 points++;
 
@@ -58,7 +58,7 @@ public class Field : MonoBehaviour
             Vector3 targetScale1 = startScale1,
                 targetScale2 = startScale2;
 
-            if (player == Player.PLAYER_2)
+            if (player == PlayerType.PLAYER_2)
             {
                 targetScale1 += new Vector3(conquerRatio, 0f, -0.01f);
                 targetScale2 -= new Vector3(conquerRatio, 0f, -0.01f);

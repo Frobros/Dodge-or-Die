@@ -1,4 +1,4 @@
-public enum Player
+public enum PlayerType
 {
     PLAYER_1,
     PLAYER_2,

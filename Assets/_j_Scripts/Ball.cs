@@ -8,7 +8,7 @@ public class Ball : MonoBehaviour
         speed,
         maxSpeed,
         dragSpeed;
-    public Player controlledBy;
+    public PlayerType controlledBy;
     public Material matPlayer1, matPlayer2, matBoth, matNone;
     public Material matTrailPlayer1, matTrailPlayer2;
     private PlayerMovement movement1, movement2;
@@ -22,9 +22,9 @@ public class Ball : MonoBehaviour
         trail = GetComponentInChildren<TrailRenderer>();
         ren = GetComponent<Renderer>();
         rb = GetComponent<Rigidbody2D>();
-        movement1 = Array.Find(FindObjectsOfType<PlayerMovement>(), p => p.player == Player.PLAYER_1);
-        movement2 = Array.Find(FindObjectsOfType<PlayerMovement>(), p => p.player == Player.PLAYER_2);
-        SetControlledBy(Player.BOTH);
+        movement1 = Array.Find(FindObjectsOfType<PlayerMovement>(), player => player.Type == PlayerType.PLAYER_1);
+        movement2 = Array.Find(FindObjectsOfType<PlayerMovement>(), player => player.Type == PlayerType.PLAYER_2);
+        SetControlledBy(PlayerType.BOTH);
     }
 
     void Update()
@@ -35,13 +35,13 @@ public class Ball : MonoBehaviour
             dragSpeed = dragSpeed + dragSpeed * acceleration * Time.deltaTime;
         }
         Vector2 drag = Vector2.zero;
-        if ((controlledBy == Player.BOTH || controlledBy == Player.PLAYER_1) && !movement1.isHit)
+        if ((controlledBy == PlayerType.BOTH || controlledBy == PlayerType.PLAYER_1) && !movement1.IsHit)
         {
-            drag += dragSpeed * Time.deltaTime * movement1.direction;
+            drag += dragSpeed * Time.deltaTime * movement1.Direction;
         }
-        if ((controlledBy == Player.BOTH  || controlledBy == Player.PLAYER_2) && !movement2.isHit)
+        if ((controlledBy == PlayerType.BOTH  || controlledBy == PlayerType.PLAYER_2) && !movement2.IsHit)
         {
-            drag += dragSpeed * Time.deltaTime * movement2.direction;
+            drag += dragSpeed * Time.deltaTime * movement2.Direction;
         }
 
         if (drag.magnitude > 0)
@@ -57,15 +57,15 @@ public class Ball : MonoBehaviour
         rb.velocity = speed * velocity.normalized;
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collider)
     {
-        Target t = collision.transform.GetComponent<Target>();
+        Target t = collider.transform.GetComponent<Target>();
         if (t != null)
         {
-            if (t.player == Player.PLAYER_1)
-                SetControlledBy(Player.PLAYER_1);
-            if (t.player == Player.PLAYER_2)
-                SetControlledBy(Player.PLAYER_2);
+            if (t.player == PlayerType.PLAYER_1)
+                SetControlledBy(PlayerType.PLAYER_1);
+            if (t.player == PlayerType.PLAYER_2)
+                SetControlledBy(PlayerType.PLAYER_2);
         }
     }
 
@@ -77,15 +77,15 @@ public class Ball : MonoBehaviour
         // SFX: Hit Last Wall
         if (t != null)
         {
-            SetControlledBy(Player.NONE);
+            SetControlledBy(PlayerType.NONE);
             StartCoroutine(FindObjectOfType<ShakeCamera>().Shake(0.1f, 0.2f));
         }
         // SFX: Hit Player
         else if (player != null)
         {
-            FindObjectOfType<Field>().SetPoint(player.player);
+            FindObjectOfType<Field>().SetPoint(player.Type);
             player.Hit(transform.position);
-            StartCoroutine(FindObjectOfType<ShakeCamera>().Shake(0.6f, 0.5f * player.freezeFor));
+            StartCoroutine(FindObjectOfType<ShakeCamera>().Shake(0.6f, 0.5f * player.FreezeFor));
         }
         // SFX: Hit Anything Else
         else
@@ -94,23 +94,23 @@ public class Ball : MonoBehaviour
         }
     }
 
-    private void SetControlledBy(Player player)
+    private void SetControlledBy(PlayerType player)
     {
         controlledBy = player;
         switch (controlledBy)
         {
-            case Player.PLAYER_1:
+            case PlayerType.PLAYER_1:
                 ren.material = matPlayer1;
                 trail.material = matTrailPlayer1;
                 break;
-            case Player.PLAYER_2:
+            case PlayerType.PLAYER_2:
                 ren.material = matPlayer2;
                 trail.material = matTrailPlayer2;
                 break;
-            case Player.BOTH:
+            case PlayerType.BOTH:
                 ren.material = matBoth;
                 break;
-            case Player.NONE:
+            case PlayerType.NONE:
                 ren.material = matNone;
                 trail.time = 0f;
                 break;

@@ -43,5 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 246c4ff2211190341a97ae36bbb9e44c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction1: {x: 0, y: 0}
-  direction2: {x: 0, y: 0}
+  player1: {fileID: 0}
+  player2: {fileID: 0}
