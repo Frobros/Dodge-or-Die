@@ -7,12 +7,13 @@ public class TitleHandler : MonoBehaviour
     {
         Application.targetFrameRate = 30;
     }
-
-    void Update()
+    public void PlayGame()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }

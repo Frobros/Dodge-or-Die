@@ -5,6 +5,9 @@ using UnityEngine.UI;
 public class MenuScript : MonoBehaviour
 {
     public GameObject overlay;
+    public GameObject button1vs1;
+    public GameObject buttonSolo;
+    public GameObject buttonExit;
     public GameObject buttonResume;
     public GameObject buttonRestart;
     public GameObject buttonQuit;
@@ -14,7 +17,7 @@ public class MenuScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        overlay.SetActive(false);
+        //overlay.SetActive(false);
         buttonResume.SetActive(false);
         buttonQuit.SetActive(false);
         buttonRestart.SetActive(false);
@@ -90,7 +93,7 @@ public class MenuScript : MonoBehaviour
     public void QuitGame()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("title");
+        SceneManager.LoadScene(0);
     }
 
     public void PlayGame()
