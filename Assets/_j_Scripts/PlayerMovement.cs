@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
     private PlayerController controller;
+    private AIController aiController;
 
     [SerializeField]
     private float speed;
@@ -14,11 +16,19 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float freezeFor = 1f;
 
+    private bool controlledByAI;
+
     private float freezeUntil = 0f;
     internal bool IsHit { get { return isHit; } }
     internal float FreezeFor { get { return freezeFor; } }
-    internal Vector2 Direction { get { return controller.Direction; } }
+    internal Vector2 Direction { 
+        get {
+            if (controlledByAI) return aiController.Direction;
+            else return controller.Direction; 
+        }
+    }
     internal PlayerType Type { get { return controller.Type; } }
+
 
     void Awake()
     {
@@ -29,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         if (!isHit)
-            rb.velocity = speed * controller.Direction;
+            rb.velocity = speed * Direction;
         else
         {
             isHit = Time.time < freezeUntil;
@@ -51,5 +61,11 @@ public class PlayerMovement : MonoBehaviour
     private float Damp(float dampingFactor)
     {
         return Mathf.Pow(1f - dampingFactor, Time.deltaTime);
+    }
+
+    internal void SetControlledByAI()
+    {
+        controlledByAI = true;
+        aiController = GetComponent<AIController>();
     }
 }

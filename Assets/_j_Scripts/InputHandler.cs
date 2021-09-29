@@ -16,14 +16,16 @@ public class InputHandler : MonoBehaviour
      */
     private void Awake()
     {
-
         // Discard existing assignments.
         player1.user.UnpairDevices();
-        player2.user.UnpairDevices();
         InputUser.PerformPairingWithDevice(Keyboard.current, user: player1.user);
-        InputUser.PerformPairingWithDevice(Keyboard.current, user: player2.user);
-
         player1.user.ActivateControlScheme("KeyboardLeft");
-        player2.user.ActivateControlScheme("KeyboardRight");
+        
+        if (player2)
+        {
+            player2.user.UnpairDevices();
+            InputUser.PerformPairingWithDevice(Keyboard.current, user: player2.user);
+            player2.user.ActivateControlScheme("KeyboardRight");
+        }
     }
 }
