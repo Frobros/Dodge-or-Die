@@ -4,7 +4,6 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
-
     [SerializeField]
     private PlayerType type;
     private CharacterController controller;
@@ -12,7 +11,6 @@ public class PlayerController : MonoBehaviour
 
     internal PlayerType Type { get { return type; } }
     internal Vector2 Direction { get { return direction; } }
-
 
     void Start()
     {
@@ -22,9 +20,5 @@ public class PlayerController : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         direction = context.ReadValue<Vector2>();
-        Debug.Log(type);
     }
-
-
-
 }
