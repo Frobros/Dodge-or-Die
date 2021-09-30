@@ -10,19 +10,23 @@ public enum PlayMode
 public class GameMode : MonoBehaviour
 {
     [SerializeField]
-    private PlayMode mode;
+    private PlayMode playMode;
 
-    [SerializeField] 
+    [SerializeField]
+    [Range(5, 20)]
     private int ballSpeed = 10;
 
-    [SerializeField] 
-    private int sfxVolume = 100;
+    [SerializeField]
+    [Range(0, 20)]
+    private int sfxVolume = 20;
 
-    [SerializeField] 
-    private int musicVolume = 100;
+    [SerializeField]
+    [Range(0, 20)]
+    private int musicVolume = 20;
     
-    [SerializeField] 
-    private int screenShake = 100;
+    [SerializeField]
+    [Range(0, 20)]
+    private int screenShake = 20;
 
     private static GameMode _instance;
 
@@ -51,14 +55,20 @@ public class GameMode : MonoBehaviour
     {
         if (scene.buildIndex == 1)
         {
-            // TODO: When AI is merged, set aiMovement.controlledByAI = true;
-            FindObjectOfType<ShakeCamera>().setStrength(screenShake);
+            if (playMode == PlayMode.SOLO)
+            {
+                // TODO: set aiMovement.controlledByAI = true;
+            } else
+            {
+                // TODO: set aiMovement.controlledByAI = false;
+            }
+            setScreenShakeIntensity(screenShake);
             FindObjectOfType<Ball>().speed = ballSpeed;
         }
     }
     public void OnSelectPlayMode(int _mode)
     {
-        mode = (PlayMode) _mode;
+        playMode = (PlayMode) _mode;
     }
 
     private void OnChangeBallSpeed(System.Single _ballSpeed)
@@ -79,6 +89,7 @@ public class GameMode : MonoBehaviour
     private void OnChangeScreenShakeIntensity(System.Single _screenShake)
     {
         screenShake = (int) _screenShake;
+        setScreenShakeIntensity(screenShake);
     }
 
     private void OnReleaseSfxVolume()
@@ -150,4 +161,9 @@ public class GameMode : MonoBehaviour
         }
     }
 
+    void setScreenShakeIntensity(int sliderValue)
+    {
+        // divided by 20 to convert from slider range [0; 20] to percentage range [0f; 1f]
+        FindObjectOfType<ShakeCamera>().setStrength((float)screenShake / 20f);
+    }
 }

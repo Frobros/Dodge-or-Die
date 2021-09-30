@@ -1143,6 +1143,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameMode
       objectReference: {fileID: 0}
+    - target: {fileID: 6973557141111895487, guid: b736724b8136f8b4d97273b33cd02934, type: 3}
+      propertyPath: sfxVolume
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6973557141111895487, guid: b736724b8136f8b4d97273b33cd02934, type: 3}
+      propertyPath: musicVolume
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6973557141111895487, guid: b736724b8136f8b4d97273b33cd02934, type: 3}
+      propertyPath: screenShake
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b736724b8136f8b4d97273b33cd02934, type: 3}
 --- !u!1001 &828592174098048848
@@ -2746,9 +2758,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 7136125151520215675}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 100
+  m_MaxValue: 20
   m_WholeNumbers: 1
-  m_Value: 100
+  m_Value: 20
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -3307,9 +3319,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 7136125151949978462}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 100
+  m_MaxValue: 20
   m_WholeNumbers: 1
-  m_Value: 100
+  m_Value: 20
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -4130,9 +4142,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 7136125150778769141}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 100
+  m_MaxValue: 20
   m_WholeNumbers: 1
-  m_Value: 100
+  m_Value: 20
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:

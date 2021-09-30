@@ -10,9 +10,10 @@ public class ShakeCamera : MonoBehaviour
     {
         menu = FindObjectOfType<MenuScript>();
     }
-    public void setStrength(int strengthInPercent)
+    public void setStrength(float _strength)
     {
-        strength = (float)strengthInPercent / 100f;
+        strength = _strength;
+        Debug.Log("Shake Strength = " + strength);
     }
 
     public IEnumerator Shake(float duration, float magnitude)
@@ -23,8 +24,8 @@ public class ShakeCamera : MonoBehaviour
         {
             if ((!menu || !menu.isPaused) && Time.timeScale != 0f)
             {
-                float x = originalPos.x + Random.Range(-1f, 1f) * magnitude;
-                float y = originalPos.y + Random.Range(-1f, 1f) * magnitude;
+                float x = originalPos.x + Random.Range(-1f, 1f) * magnitude * strength;
+                float y = originalPos.y + Random.Range(-1f, 1f) * magnitude * strength;
                 transform.localPosition = new Vector3(x, y, originalPos.z);
             }
             elapsed += Time.deltaTime;
