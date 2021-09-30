@@ -614,7 +614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 920179446}
+  m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &329120990
@@ -6863,7 +6863,7 @@ GameObject:
   - component: {fileID: 6174166218113395003}
   - component: {fileID: 1010496239266658611}
   m_Layer: 5
-  m_Name: Press Enter
+  m_Name: ClickHere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8549,7 +8549,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PRESS ENTER
+  m_text: CLICK HERE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 87751a6db24e98847a9b037fca4010ba, type: 2}
   m_sharedMaterial: {fileID: -2768270074301002521, guid: 87751a6db24e98847a9b037fca4010ba, type: 2}
