@@ -13,7 +13,6 @@ public class ShakeCamera : MonoBehaviour
     public void setStrength(float _strength)
     {
         strength = _strength;
-        Debug.Log("Shake Strength = " + strength);
     }
 
     public IEnumerator Shake(float duration, float magnitude)
