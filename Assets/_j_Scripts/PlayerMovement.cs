@@ -24,7 +24,9 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         if (!isHit)
+        {
             rb.velocity = speed * direction;
+        }
         else
         {
             isHit = Time.time < freezeUntil;

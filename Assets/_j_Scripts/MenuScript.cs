@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class MenuScript : MonoBehaviour
 {
+    public GameObject pauseMenu;
     public GameObject overlay;
     public GameObject button1vs1;
     public GameObject buttonSolo;
@@ -17,11 +18,13 @@ public class MenuScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        /*
         //overlay.SetActive(false);
         buttonResume.SetActive(false);
         buttonQuit.SetActive(false);
         buttonRestart.SetActive(false);
         textWin.gameObject.SetActive(false);
+        */
     }
 
     // Update is called once per frame
@@ -31,43 +34,34 @@ public class MenuScript : MonoBehaviour
         {
             if (isPaused)
             {
-                ResumeGame();
+                OnResume();
             }
             else
             {
-                PauseGame();
+                OnPause();
             }
         }
     }
 
-    public void PauseGame()
+    public void OnPause()
     {
         if (!isGameOver)
         {
-            SetPauseMenuActive(true);
+            pauseMenu.SetActive(true);
             Time.timeScale = 0f;
             isPaused = true;
         }
     }
 
 
-    public void ResumeGame()
+    public void OnResume()
     {
         if (!isGameOver)
         {
-            SetPauseMenuActive(false);
+            pauseMenu.SetActive(false);
             Time.timeScale = 1f;
             isPaused = false;
         }
-    }
-
-    private void SetPauseMenuActive(bool active)
-    {
-        textWin.gameObject.SetActive(false);
-        overlay.SetActive(active);
-        buttonResume.SetActive(active);
-        buttonQuit.SetActive(active);
-        buttonRestart.SetActive(active);
     }
 
     public void SetWinMenuActive(bool active, Player player)
@@ -85,23 +79,23 @@ public class MenuScript : MonoBehaviour
         isGameOver = true;
     }
 
-    public void RestartGame()
+    public void OnRestartGame()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-    public void QuitGame()
+    public void OnQuitGame()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(0);
     }
 
-    public void PlayGame()
+    public void OnPlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    public void ExitGame()
+    public void OnQuitApplication()
     {
         Application.Quit();
     }
