@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -15,7 +16,6 @@ public class MenuScript : MonoBehaviour
     public Text textWin;
     public bool isPaused, isGameOver;
 
-    // Start is called before the first frame update
     void Start()
     {
         /*
@@ -27,51 +27,47 @@ public class MenuScript : MonoBehaviour
         */
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (!isGameOver && Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (isPaused)
-            {
-                OnResume();
-            }
-            else
-            {
-                OnPause();
-            }
-        }
-    }
-
-    public void OnPause()
+    public void OnPause(InputAction.CallbackContext context)
     {
         if (!isGameOver)
         {
-            pauseMenu.SetActive(true);
-            Time.timeScale = 0f;
-            isPaused = true;
+            if (isPaused) ResumeGame();
+            else PauseGame();
         }
     }
 
-
-    public void OnResume()
+    public void PauseGame()
     {
-        if (!isGameOver)
-        {
-            pauseMenu.SetActive(false);
-            Time.timeScale = 1f;
-            isPaused = false;
-        }
+        SetPauseMenuActive(true);
+        Time.timeScale = 0f;
+        isPaused = true;
     }
 
-    public void SetWinMenuActive(bool active, Player player)
+
+    public void ResumeGame()
+    {
+        SetPauseMenuActive(false);
+        Time.timeScale = 1f;
+        isPaused = false;
+    }
+
+    private void SetPauseMenuActive(bool active)
+    {
+        textWin.gameObject.SetActive(false);
+        overlay.SetActive(active);
+        buttonResume.SetActive(active);
+        buttonQuit.SetActive(active);
+        buttonRestart.SetActive(active);
+    }
+
+    public void SetWinMenuActive(bool active, PlayerType player)
     {
         overlay.SetActive(false);
         buttonResume.SetActive(false);
         buttonQuit.SetActive(active);
         buttonRestart.SetActive(active);
         textWin.gameObject.SetActive(active);
-        string theWinnerIs = player == Player.PLAYER_1
+        string theWinnerIs = player == PlayerType.PLAYER_1
             ? "RED"
             : "BLUE";
         theWinnerIs += " WINS";

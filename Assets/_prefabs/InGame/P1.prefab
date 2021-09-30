@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 4844798221379302937}
   - component: {fileID: 4844798221379302942}
   - component: {fileID: 4844798221379302938}
+  - component: {fileID: 2796041657540910239}
   - component: {fileID: 5706813950567045850}
+  - component: {fileID: 1520620817}
   m_Layer: 8
   m_Name: P1
   m_TagString: Untagged
@@ -71,6 +73,68 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &2796041657540910239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4844798221379303140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: f93801b2d0c75ab4987b523b78b33287, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5706813950567045850}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 3554533f-2f9a-4efd-8824-c07f7046392e
+    m_ActionName: Player/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+        m_MethodName: OnPause
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 55f1e502-3c03-4a3a-8da5-8baa2e00ced7
+    m_ActionName: Player/Pause[/Keyboard/escape]
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: KeyboardLeft
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!114 &5706813950567045850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,12 +147,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e03777ea809104cbf4f81d934d78bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: 0
-  speed: {x: 10, y: 10}
-  freezeUntil: 0
-  freezeFor: 0.5
+  type: 0
+--- !u!114 &1520620817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4844798221379303140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a0792e863487a745849ffdd7a718bb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
   damping: 0.95
   isHit: 0
+  freezeFor: 1
 --- !u!1001 &6362383958959497082
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -14,11 +14,11 @@ public class PlayerAnimate : MonoBehaviour
 
     void Update()
     {
-        bool isRunning = movement.direction.magnitude > 0 && !movement.isHit;
+        bool isRunning = movement.Direction.magnitude > 0 && !movement.IsHit;
         anim.SetBool("IsRunning", isRunning);
         if (isRunning)
         {
-            LookAt(movement.direction);
+            LookAt(movement.Direction);
         }
     }
 
