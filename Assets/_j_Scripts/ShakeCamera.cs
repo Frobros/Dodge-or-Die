@@ -4,6 +4,7 @@ using UnityEngine;
 public class ShakeCamera : MonoBehaviour
 {
     MenuScript menu;
+    [SerializeField]
     private float strength = 1f;
     
     private void Start()
