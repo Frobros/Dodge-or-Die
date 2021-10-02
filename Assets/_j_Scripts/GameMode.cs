@@ -164,6 +164,6 @@ public class GameMode : MonoBehaviour
     void setScreenShakeIntensity(int sliderValue)
     {
         // divided by 20 to convert from slider range [0; 20] to percentage range [0f; 1f]
-        FindObjectOfType<ShakeCamera>().setStrength((float)screenShake / 20f);
+        FindObjectOfType<ShakeCamera>().Strength = (float) screenShake / 20f;
     }
 }

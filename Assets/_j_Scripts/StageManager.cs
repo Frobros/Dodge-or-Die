@@ -15,7 +15,7 @@ public class StageManager : MonoBehaviour
     {
         // SFX: Play win sound
         Time.timeScale = 0f;
-        FindObjectOfType<MenuScript>().SetWinMenuActive(true, player);
+        FindObjectOfType<MenuHandler>().SetWinMenuActive(true, player);
 
         // Play Particles
         ParticlePlayback particle = FindObjectOfType<ParticlePlayback>();

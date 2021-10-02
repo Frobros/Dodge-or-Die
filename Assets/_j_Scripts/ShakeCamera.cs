@@ -3,17 +3,15 @@ using UnityEngine;
 
 public class ShakeCamera : MonoBehaviour
 {
-    MenuScript menu;
     [SerializeField]
     private float strength = 1f;
+    public float Strength { set { strength = value;  } }
+
+    private IndependentDeltaTime time;
     
     private void Start()
     {
-        menu = FindObjectOfType<MenuScript>();
-    }
-    public void setStrength(float _strength)
-    {
-        strength = _strength;
+        time = FindObjectOfType<IndependentDeltaTime>();
     }
 
     public IEnumerator Shake(float duration, float magnitude)
@@ -22,13 +20,10 @@ public class ShakeCamera : MonoBehaviour
         float elapsed = 0f;
         while (elapsed < duration)
         {
-            if ((!menu || !menu.isPaused) && Time.timeScale != 0f)
-            {
-                float x = originalPos.x + Random.Range(-1f, 1f) * magnitude * strength;
-                float y = originalPos.y + Random.Range(-1f, 1f) * magnitude * strength;
-                transform.localPosition = new Vector3(x, y, originalPos.z);
-            }
-            elapsed += Time.deltaTime;
+            float x = originalPos.x + Random.Range(-1f, 1f) * magnitude * strength;
+            float y = originalPos.y + Random.Range(-1f, 1f) * magnitude * strength;
+            transform.localPosition = new Vector3(x, y, originalPos.z);
+            elapsed += time.deltaTime;
             yield return null;
         }
         transform.localPosition = originalPos;
