@@ -46,16 +46,29 @@ public class MenuHandler : MonoBehaviour
         winMenu.SetActive(active);
         winText.gameObject.SetActive(active);
         string resultText = "";
+        Color buttonColor;
         if (player == PlayerType.PLAYER_1)
         {
             resultText = "RED WINS";
-            winImage.color = new Color(1f, 73f/255f, 119f/255f);
+            winImage.color = new Color(1f, 73f / 255f, 119f / 255f);
+            buttonColor = new Color(205f / 255f, 0f , 44f / 255f);
         }
         else
         {
             resultText = "BLUE WINS";
-            winImage.color = new Color(0f, 170f / 255f, 1f);
+            winImage.color = new Color(0f, 204f / 255f, 1f);
+            buttonColor = new Color(0f, 60f / 255f, 178f / 255f);
         }
+
+        foreach (Button button in winMenu.GetComponentsInChildren<Button>())
+        {
+            Debug.Log(button.gameObject.name);
+            ColorBlock colors = button.colors;
+            colors.highlightedColor = buttonColor;
+            colors.selectedColor = buttonColor;
+            button.colors = colors;
+        }
+
         winText.text = resultText;
         isGameOver = true;
     }
