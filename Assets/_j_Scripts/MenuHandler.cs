@@ -21,7 +21,7 @@ public class MenuHandler : MonoBehaviour
     {
         if (!isGameOver)
         {
-            if (isPaused) ResumeGame();
+            if (isPaused) OnResumeGame();
             else PauseGame();
         }
     }
@@ -34,28 +34,31 @@ public class MenuHandler : MonoBehaviour
     }
 
 
-    public void ResumeGame()
+    public void OnResumeGame()
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
     }
 
-    public void SetWinMenuActive(bool active, PlayerType player)
+    public void SetWinMenuActive(PlayerType player)
     {
-        winMenu.SetActive(active);
-        winText.gameObject.SetActive(active);
         string resultText = "";
         Color buttonColor;
+
+        isGameOver = true;
+        winMenu.SetActive(true);
+        winText.gameObject.SetActive(true);
+        
         if (player == PlayerType.PLAYER_1)
         {
-            resultText = "RED WINS";
+            resultText = "RED";
             winImage.color = new Color(1f, 73f / 255f, 119f / 255f);
             buttonColor = new Color(205f / 255f, 0f , 44f / 255f);
         }
         else
         {
-            resultText = "BLUE WINS";
+            resultText = "BLUE";
             winImage.color = new Color(0f, 204f / 255f, 1f);
             buttonColor = new Color(0f, 60f / 255f, 178f / 255f);
         }
@@ -69,8 +72,7 @@ public class MenuHandler : MonoBehaviour
             button.colors = colors;
         }
 
-        winText.text = resultText;
-        isGameOver = true;
+        winText.text = resultText + " WINS";
     }
 
     public void OnRestartGame()

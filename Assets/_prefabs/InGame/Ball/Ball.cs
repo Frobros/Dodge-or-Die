@@ -3,19 +3,27 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    public float
+    [SerializeField]
+    private float
         acceleration,
         speed,
         maxSpeed,
         dragSpeed;
-    public PlayerType controlledBy;
-    public Material matPlayer1, matPlayer2, matBoth, matNone;
-    public Material matTrailPlayer1, matTrailPlayer2;
-    private PlayerMovement movement1, movement2;
+    [SerializeField]
+    private  PlayerType controlledBy;
+    [SerializeField]
+    private Material matPlayer1, matPlayer2, matBoth, matNone;
+    [SerializeField]
+    private Material matTrailPlayer1, matTrailPlayer2;
+
+
     private Rigidbody2D rb;
     private Renderer ren;
-
     private TrailRenderer trail;
+    private PlayerMovement movement1, movement2;
+
+    public float Speed { set { speed = value; } }
+    public PlayerType ControlledBy { get { return controlledBy; } }
 
     private void Start()
     {

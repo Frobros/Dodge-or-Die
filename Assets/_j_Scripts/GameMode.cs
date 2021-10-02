@@ -17,6 +17,10 @@ public class GameMode : MonoBehaviour
     private int ballSpeed = 10;
 
     [SerializeField]
+    [Range(1, 20)]
+    private int pointsToWin = 5;
+
+    [SerializeField]
     [Range(0, 20)]
     private int sfxVolume = 20;
 
@@ -63,7 +67,8 @@ public class GameMode : MonoBehaviour
                 // TODO: set aiMovement.controlledByAI = false;
             }
             setScreenShakeIntensity(screenShake);
-            FindObjectOfType<Ball>().speed = ballSpeed;
+            FindObjectOfType<Ball>().Speed = ballSpeed;
+            FindObjectOfType<Field>().PointsToWin = pointsToWin;
         }
     }
     public void OnSelectPlayMode(int _mode)

@@ -40,7 +40,7 @@ public class AIController : MonoBehaviour
 
     void Update()
     {
-        if (ball.controlledBy == PlayerType.PLAYER_1 || ball.controlledBy == PlayerType.NONE)
+        if (ball.ControlledBy == PlayerType.PLAYER_1 || ball.ControlledBy == PlayerType.NONE)
         {
             Vector2 ballDirection = transform.position - ball.transform.position;
             if (ballDirection.magnitude < requiredBallDistance)
@@ -50,7 +50,7 @@ public class AIController : MonoBehaviour
                 if (raycastHit.collider)
                 {
                     Vector2 fleeDirection = requiredBallDistance * ballDirection.normalized;
-                    
+
                     for (int i = 1; i < 180; i++)
                     {
                         Vector2 dirA = RotateVectorByDegrees(fleeDirection, i);
@@ -100,10 +100,10 @@ public class AIController : MonoBehaviour
                 direction = Vector2.zero;
             }
             direction.Normalize();
-        } 
-        
-        
-        else if (ball.controlledBy == PlayerType.PLAYER_2)
+        }
+
+
+        else if (ball.ControlledBy == PlayerType.PLAYER_2)
         {
             direction = otherPlayer.position - ball.transform.position;
             direction.Normalize();
@@ -126,7 +126,8 @@ public class AIController : MonoBehaviour
             / Mathf.Sqrt(Mathf.Pow(-lineEnd.y + lineStart.y, 2f) + Mathf.Pow(lineEnd.x - lineStart.x, 2f));
     }
 
-    Vector2 RotateVectorByDegrees(Vector2 v, float deg) {
+    Vector2 RotateVectorByDegrees(Vector2 v, float deg)
+    {
         float rad = Mathf.Deg2Rad * deg;
         float sinRad = Mathf.Sin(rad);
         float cosRad = Mathf.Cos(rad);
@@ -134,5 +135,5 @@ public class AIController : MonoBehaviour
             v.x * cosRad - v.y * sinRad,
             v.x * sinRad + v.y * cosRad
         );
-}
+    }
 }

@@ -1,7 +1,5 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using System;
-using UnityEngine.InputSystem;
 
 public class StageManager : MonoBehaviour
 {
@@ -11,22 +9,17 @@ public class StageManager : MonoBehaviour
         // MUSIC: Start Theme
     }
 
-    internal void Win(PlayerType player)
+    internal void Win(PlayerType playerType)
     {
         // SFX: Play win sound
         Time.timeScale = 0f;
-        FindObjectOfType<MenuHandler>().SetWinMenuActive(true, player);
+        FindObjectOfType<MenuHandler>().SetWinMenuActive(playerType);
 
         // Play Particles
         ParticlePlayback particle = FindObjectOfType<ParticlePlayback>();
-        GameObject playerObj = Array.Find(FindObjectsOfType<PlayerController>(), p => p.Type == player).gameObject;
-        particle.transform.position = playerObj.transform.position;
+        GameObject player = Array.Find(FindObjectsOfType<PlayerController>(), p => p.Type == playerType).gameObject;
+        particle.transform.position = player.transform.position;
         particle.PlayParticles();
-        Destroy(playerObj);
-    }
-
-    void OnReset(InputAction.CallbackContext context)
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Destroy(player);
     }
 }

@@ -43,8 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae3a4fcf75e7c054fb504d7b5f7b244e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mode: 0
+  playMode: 0
   ballSpeed: 10
-  sfxVolume: 100
-  musicVolume: 100
-  screenShake: 100
+  pointsToWin: 5
+  sfxVolume: 20
+  musicVolume: 20
+  screenShake: 20

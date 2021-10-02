@@ -4,16 +4,22 @@ using UnityEngine.SceneManagement;
 
 public class Field : MonoBehaviour
 {
-    StageManager stageManager;
-    public Transform field1;
-    public Transform field2;
-    public int pointsToWin = 2;
-    public int points = 0;
-    private bool isChanging;
+    [SerializeField]
+    private Transform field1;
+    [SerializeField]
+    private Transform field2;
+    [SerializeField]
+    private int points = 0;
 
+    private int pointsToWin = 0;
+    private bool isChanging;
+    private StageManager stageManager;
+
+    public int PointsToWin { set { pointsToWin = value;  } }
     private void Start()
     {
         stageManager = FindObjectOfType<StageManager>();
+
         field1.localPosition = new Vector3(-0.25f, 0f, -0.01f);
         field2.localPosition = new Vector3(0.25f, 0f, -0.01f);
 
