@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DarkTonic.MasterAudio;
 
 public class GameMode : MonoBehaviour
 {
@@ -53,10 +54,18 @@ public class GameMode : MonoBehaviour
     {
         if (scene.buildIndex == 1)
         {
+            // When there is a countdown, the whistle trigger has to be moved / altered
+            MasterAudio.PlaySoundAndForget("Whistle");
+            MasterAudio.FireCustomEvent("SwitchToArenaScene", FindObjectOfType<AudioObject>().transform);
             setScreenShakeIntensity(screenShake);
             FindObjectOfType<Ball>().Speed = ballSpeed;
             FindObjectOfType<Field>().PointsToWin = pointsToWin;
             FindObjectOfType<SetupSpawners>().AssignAndSpawnPlayers(mode);
+        }
+        else if (scene.buildIndex == 0)
+        {
+            // This triggers the custom event when running the game, causing a Unity runtime error (PlaylistControllers not initialized)
+            MasterAudio.FireCustomEvent("SwitchToMenuScene", FindObjectOfType<AudioObject>().transform);
         }
     }
     public void OnSelectPlayMode(int _mode)
@@ -72,11 +81,14 @@ public class GameMode : MonoBehaviour
     private void OnChangeSfxVolume(System.Single _sfxVolume)
     {
         sfxVolume = (int)_sfxVolume;
+        MasterAudio.MasterVolumeLevel = (float)_sfxVolume / 20f;
+        //MasterAudio.SetBusVolumeByName("Ball_SFX", (float)_sfxVolume / 20f);
+        //MasterAudio.SetBusVolumeByName("Human_SFX", (float)_sfxVolume / 20f);
     }
     private void OnChangeMusicVolume(System.Single _musicVolume)
     {
         musicVolume = (int)_musicVolume;
-        // TODO: Set Music Volume here
+        MasterAudio.PlaylistMasterVolume = (float) _musicVolume / 20f;
     }
 
     private void OnChangeScreenShakeIntensity(System.Single _screenShake)
@@ -87,7 +99,7 @@ public class GameMode : MonoBehaviour
 
     private void OnReleaseSfxVolume()
     {
-        // TODO: Play SFX (e.g. applause) with sfxVolume here 
+        MasterAudio.PlaySoundAndForget("Whistle");
     }
 
     private void OnReleaseScreenShakeIntensity()

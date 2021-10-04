@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5738025289012861020
+--- !u!1 &1492379534550725456
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5738025289012861016}
-  - component: {fileID: 5738025289012861019}
-  - component: {fileID: 5738025289012861018}
-  - component: {fileID: 5738025289012861021}
+  - component: {fileID: 1492379534550725468}
+  - component: {fileID: 1492379534550725471}
+  - component: {fileID: 1492379534550725470}
+  - component: {fileID: 1492379534550725457}
   m_Layer: 0
-  m_Name: PlaylistController
+  m_Name: TitlePlaylistController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5738025289012861016
+--- !u!4 &1492379534550725468
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5738025289012861020}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_GameObject: {fileID: 1492379534550725456}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &5738025289012861019
+--- !u!82 &1492379534550725471
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5738025289012861020}
+  m_GameObject: {fileID: 1492379534550725456}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -129,13 +129,13 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!82 &5738025289012861018
+--- !u!82 &1492379534550725470
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5738025289012861020}
+  m_GameObject: {fileID: 1492379534550725456}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -150,7 +150,7 @@ AudioSource:
   Priority: 0
   DopplerLevel: 1
   MinDistance: 10
-  MaxDistance: 500
+  MaxDistance: 1000000
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -225,13 +225,13 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5738025289012861021
+--- !u!114 &1492379534550725457
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5738025289012861020}
+  m_GameObject: {fileID: 1492379534550725456}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1aee0c42cfbeb2b45b09ce685ab0323c, type: 3}
@@ -241,9 +241,9 @@ MonoBehaviour:
   isShuffle: 0
   isAutoAdvance: 1
   loopPlaylist: 1
-  _playlistVolume: 1
+  _playlistVolume: 0.000031622778
   isMuted: 0
-  startPlaylistName: Main Menu
+  startPlaylistName: Main Menu Music
   syncGroupNum: -1
   ignoreListenerPause: 0
   mixerChannel: {fileID: 0}
@@ -263,4 +263,4 @@ MonoBehaviour:
   playlistStartedCustomEvent: 
   playlistEndedEventExpanded: 0
   playlistEndedCustomEvent: 
-  _frames: 0
+  _frames: 5000
