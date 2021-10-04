@@ -65,7 +65,6 @@ public class MenuHandler : MonoBehaviour
 
         foreach (Button button in winMenu.GetComponentsInChildren<Button>())
         {
-            Debug.Log(button.gameObject.name);
             ColorBlock colors = button.colors;
             colors.highlightedColor = buttonColor;
             colors.selectedColor = buttonColor;
