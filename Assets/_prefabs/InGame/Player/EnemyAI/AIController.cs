@@ -1,38 +1,22 @@
-using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class AIController : MonoBehaviour
 {
-    [SerializeField]
-    private bool isControlledByAI;
     [SerializeField]
     private float requiredBallDistance = 5f;
     [SerializeField]
     private float threshold;
     [SerializeField]
-    private float tolerance;
-    [SerializeField]
     private LayerMask whatIsWall;
-    private PlayerInput input;
-    private PlayerController controller;
+
     private Ball ball;
     private Transform otherPlayer;
-
     private Vector2 direction = Vector2.zero;
 
     public Vector2 Direction { get { return direction; } }
+
     void Start()
     {
-        input = GetComponent<PlayerInput>();
-        controller = GetComponent<PlayerController>();
-        if (isControlledByAI)
-        {
-            Destroy(input);
-            Destroy(controller);
-        }
-        else Destroy(this);
-
         GetComponent<PlayerMovement>().SetControlledByAI();
         ball = FindObjectOfType<Ball>();
         otherPlayer = System.Array.Find(FindObjectsOfType<PlayerController>(), p => p.Type == PlayerType.PLAYER_1).transform;
@@ -96,12 +80,10 @@ public class AIController : MonoBehaviour
             }
             else
             {
-                // direction = ballDirection;
                 direction = Vector2.zero;
             }
             direction.Normalize();
         }
-
 
         else if (ball.ControlledBy == PlayerType.PLAYER_2)
         {
@@ -113,17 +95,6 @@ public class AIController : MonoBehaviour
         {
             direction = Vector2.zero;
         }
-    }
-
-    private bool InTolerance(float threshold, float value, float tolerance)
-    {
-        return threshold - tolerance <= value && value <= threshold + tolerance;
-    }
-
-    float DistanceLineTwoPoint(Vector2 lineStart, Vector2 lineEnd, Vector2 point)
-    {
-        return Mathf.Abs((point.x - lineStart.x) * (-lineEnd.y + lineStart.y) + (point.y - lineStart.y) * (lineEnd.x - lineStart.x))
-            / Mathf.Sqrt(Mathf.Pow(-lineEnd.y + lineStart.y, 2f) + Mathf.Pow(lineEnd.x - lineStart.x, 2f));
     }
 
     Vector2 RotateVectorByDegrees(Vector2 v, float deg)

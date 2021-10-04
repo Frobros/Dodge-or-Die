@@ -116,8 +116,8 @@ MonoBehaviour:
     m_ActionName: Player/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuHandler, Assembly-CSharp
+      - m_Target: {fileID: 5706813950567045850}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: OnPause
         m_Mode: 0
         m_Arguments:

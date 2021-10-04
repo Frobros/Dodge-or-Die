@@ -7040,22 +7040,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameMode
       objectReference: {fileID: 0}
-    - target: {fileID: 6973557141111895487, guid: b736724b8136f8b4d97273b33cd02934, type: 3}
-      propertyPath: ballSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6973557141111895487, guid: b736724b8136f8b4d97273b33cd02934, type: 3}
-      propertyPath: sfxVolume
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 6973557141111895487, guid: b736724b8136f8b4d97273b33cd02934, type: 3}
-      propertyPath: musicVolume
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 6973557141111895487, guid: b736724b8136f8b4d97273b33cd02934, type: 3}
-      propertyPath: screenShake
-      value: 20
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b736724b8136f8b4d97273b33cd02934, type: 3}
 --- !u!1 &7005168722234813828

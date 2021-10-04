@@ -1,12 +1,12 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(CharacterController))]
+//[RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     private PlayerType type;
-    private CharacterController controller;
+    // private CharacterController controller;
     private Vector2 direction = Vector2.zero;
 
     internal PlayerType Type { get { return type; } }
@@ -14,11 +14,16 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        controller = GetComponent<CharacterController>();
+        // controller = GetComponent<CharacterController>();
     }
 
     public void OnMove(InputAction.CallbackContext context)
     {
         direction = context.ReadValue<Vector2>();
+    }
+
+    public void OnPause(InputAction.CallbackContext context)
+    {
+        FindObjectOfType<MenuHandler>().OnPause(context);
     }
 }

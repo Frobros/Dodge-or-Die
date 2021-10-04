@@ -1,16 +1,10 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public enum PlayMode
-{
-    TWO_PLAYER,
-    SOLO
-}
 
 public class GameMode : MonoBehaviour
 {
     [SerializeField]
-    private PlayMode playMode;
+    private PlayerMode mode;
 
     [SerializeField]
     [Range(5, 20)]
@@ -55,25 +49,19 @@ public class GameMode : MonoBehaviour
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
     {
         if (scene.buildIndex == 1)
         {
-            if (playMode == PlayMode.SOLO)
-            {
-                // TODO: set aiMovement.controlledByAI = true;
-            } else
-            {
-                // TODO: set aiMovement.controlledByAI = false;
-            }
             setScreenShakeIntensity(screenShake);
             FindObjectOfType<Ball>().Speed = ballSpeed;
             FindObjectOfType<Field>().PointsToWin = pointsToWin;
+            FindObjectOfType<SetupSpawners>().AssignAndSpawnPlayers(mode);
         }
     }
     public void OnSelectPlayMode(int _mode)
     {
-        playMode = (PlayMode) _mode;
+        mode = (PlayerMode) _mode;
     }
 
     private void OnChangeBallSpeed(System.Single _ballSpeed)
