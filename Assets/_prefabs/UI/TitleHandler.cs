@@ -7,8 +7,9 @@ public class TitleHandler : MonoBehaviour
     {
         Application.targetFrameRate = 30;
     }
-    public void PlayGame()
+    public void PlayGame(int _mode)
     {
+        FindObjectOfType<GameMode>().OnSelectPlayMode(_mode);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
