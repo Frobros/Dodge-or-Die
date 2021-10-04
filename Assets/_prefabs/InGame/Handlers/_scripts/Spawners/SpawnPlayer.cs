@@ -9,6 +9,6 @@ public class SpawnPlayer : MonoBehaviour
 
     public GameObject Spawn()
     {
-        return Instantiate<GameObject>(player, transform.position, Quaternion.identity, null);
+        return Instantiate<GameObject>(player, transform.position, transform.rotation, null);
     }
 }
