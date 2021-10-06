@@ -5378,6 +5378,10 @@ PrefabInstance:
       propertyPath: _playlistVolume
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1492379534550725457, guid: 585c6e36d6af7eb47959fb27261c9144, type: 3}
+      propertyPath: playlistStartedEventExpanded
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1492379534550725468, guid: 585c6e36d6af7eb47959fb27261c9144, type: 3}
       propertyPath: m_RootOrder
       value: 11

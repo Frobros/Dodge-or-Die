@@ -11,7 +11,8 @@ public class StageManager : MonoBehaviour
 
     internal void Win(PlayerType playerType)
     {
-        // SFX: Play win sound
+        MasterAudio.PlaySoundAndForget("Win_Cheer");
+        MasterAudio.PlaySoundAndForget("Whistle");
         Time.timeScale = 0f;
         FindObjectOfType<MenuHandler>().SetWinMenuActive(playerType);
 
