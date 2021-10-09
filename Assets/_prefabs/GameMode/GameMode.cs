@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DarkTonic.MasterAudio;
 
 public class GameMode : MonoBehaviour
 {
@@ -53,10 +54,23 @@ public class GameMode : MonoBehaviour
     {
         if (scene.buildIndex == 1)
         {
+            // When there is a countdown, the whistle trigger has to be moved / altered
+            MasterAudio.PlaySoundAndForget("Whistle");
+            if (isPlaylistControllerEnabled())
+            {
+                MasterAudio.FireCustomEvent("SwitchToArenaScene", FindObjectOfType<AudioObject>().transform);
+            }
             setScreenShakeIntensity(screenShake);
             FindObjectOfType<Ball>().Speed = ballSpeed;
             FindObjectOfType<Field>().PointsToWin = pointsToWin;
             FindObjectOfType<SetupSpawners>().AssignAndSpawnPlayers(mode);
+        }
+        else if (scene.buildIndex == 0)
+        {
+            if (isPlaylistControllerEnabled())
+            {
+                MasterAudio.FireCustomEvent("SwitchToMenuScene", FindObjectOfType<AudioObject>().transform);
+            }
         }
     }
     public void OnSelectPlayMode(int _mode)
@@ -72,11 +86,14 @@ public class GameMode : MonoBehaviour
     private void OnChangeSfxVolume(System.Single _sfxVolume)
     {
         sfxVolume = (int)_sfxVolume;
+        // The slider takes a volume between 0 and 20. MasterAudio levels its volumes in a float in [0,1]. Conversion by dividing by 20 and casting to float
+        MasterAudio.MasterVolumeLevel = (float)_sfxVolume / 20f;
     }
     private void OnChangeMusicVolume(System.Single _musicVolume)
     {
         musicVolume = (int)_musicVolume;
-        // TODO: Set Music Volume here
+        // The slider takes a volume between 0 and 20. MasterAudio levels its volumes in a float in [0,1]. Conversion by dividing by 20 and casting to float
+        MasterAudio.PlaylistMasterVolume = (float) _musicVolume / 20f;
     }
 
     private void OnChangeScreenShakeIntensity(System.Single _screenShake)
@@ -87,7 +104,7 @@ public class GameMode : MonoBehaviour
 
     private void OnReleaseSfxVolume()
     {
-        // TODO: Play SFX (e.g. applause) with sfxVolume here 
+        MasterAudio.PlaySoundAndForget("SFX_Slider");
     }
 
     private void OnReleaseScreenShakeIntensity()
@@ -123,6 +140,7 @@ public class GameMode : MonoBehaviour
             case SliderValueType.SCREEN_SHAKE_INTENSITY:
                 break;
             case SliderValueType.SFX_VOLUME:
+                OnReleaseSfxVolume();
                 break;
             case SliderValueType.MUSIC_VOLUME:
                 break;
@@ -158,5 +176,15 @@ public class GameMode : MonoBehaviour
     {
         // divided by 20 to convert from slider range [0; 20] to percentage range [0f; 1f]
         FindObjectOfType<ShakeCamera>().Strength = (float) screenShake / 20f;
+    }
+
+    bool isPlaylistControllerEnabled()
+    {
+        bool isPlaylistControllerEnabled = true;
+        foreach (PlaylistController p in FindObjectsOfType<PlaylistController>())
+        {
+            isPlaylistControllerEnabled &= p.ControllerIsReady;
+        }
+        return isPlaylistControllerEnabled;
     }
 }

@@ -1,17 +1,18 @@
 using UnityEngine;
 using System;
+using DarkTonic.MasterAudio;
 
 public class StageManager : MonoBehaviour
 {
     private void Start()
     {
         Time.timeScale = 1f;
-        // MUSIC: Start Theme
     }
 
     internal void Win(PlayerType playerType)
     {
-        // SFX: Play win sound
+        MasterAudio.PlaySoundAndForget("Win_Cheer");
+        MasterAudio.PlaySoundAndForget("Whistle");
         Time.timeScale = 0f;
         FindObjectOfType<MenuHandler>().SetWinMenuActive(playerType);
 

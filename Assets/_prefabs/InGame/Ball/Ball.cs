@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using DarkTonic.MasterAudio;
 
 public class Ball : MonoBehaviour
 {
@@ -82,22 +83,25 @@ public class Ball : MonoBehaviour
         PlayerMovement player = collision.transform.GetComponent<PlayerMovement>();
         Target t = collision.transform.GetComponent<Target>();
 
-        // SFX: Hit Last Wall
         if (t != null)
         {
+            MasterAudio.PlaySoundAndForget("BallBounce");
             SetControlledBy(PlayerType.NONE);
             StartCoroutine(FindObjectOfType<ShakeCamera>().Shake(0.1f, 0.2f));
         }
-        // SFX: Hit Player
         else if (player != null)
         {
+            MasterAudio.PlaySoundAndForget("Punch");
+            MasterAudio.PlaySoundAndForget("CrowdAww");
+            MasterAudio.PlaySoundAndForget("CrowdCheer");
+            MasterAudio.PlaySoundAndForget("Yoshi");
             FindObjectOfType<Field>().SetPoint(player.Type);
             player.Hit(transform.position);
             StartCoroutine(FindObjectOfType<ShakeCamera>().Shake(0.6f, 0.5f * player.FreezeFor));
         }
-        // SFX: Hit Anything Else
         else
         {
+            MasterAudio.PlaySoundAndForget("BallBounce");
             StartCoroutine(FindObjectOfType<ShakeCamera>().Shake(0.05f, 0.2f));
         }
     }
