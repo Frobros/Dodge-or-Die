@@ -68,12 +68,12 @@ public class Ball : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collider)
     {
-        Target t = collider.transform.GetComponent<Target>();
-        if (t != null)
+        PlayerField field = collider.transform.GetComponent<PlayerField>();
+        if (field != null)
         {
-            if (t.player == PlayerType.PLAYER_1)
+            if (field.Player == PlayerType.PLAYER_1)
                 SetControlledBy(PlayerType.PLAYER_1);
-            if (t.player == PlayerType.PLAYER_2)
+            if (field.Player == PlayerType.PLAYER_2)
                 SetControlledBy(PlayerType.PLAYER_2);
         }
     }
@@ -81,12 +81,13 @@ public class Ball : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         PlayerMovement player = collision.transform.GetComponent<PlayerMovement>();
-        Target t = collision.transform.GetComponent<Target>();
+        InterpolateScaleWall wall = collision.transform.GetComponent<InterpolateScaleWall>();
 
-        if (t != null)
+        if (wall != null)
         {
             MasterAudio.PlaySoundAndForget("BallBounce");
             SetControlledBy(PlayerType.NONE);
+            StartCoroutine(wall.Scale());
             StartCoroutine(FindObjectOfType<ShakeCamera>().Shake(0.1f, 0.2f));
         }
         else if (player != null)

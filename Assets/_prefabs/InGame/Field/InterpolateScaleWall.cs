@@ -8,8 +8,10 @@ public enum EaseType
     ELASTIC
 }
 
-public class GrowOnCollision : MonoBehaviour
+public class InterpolateScaleWall : MonoBehaviour
 {
+    [SerializeField]
+    PlayerType player;
     [SerializeField]
     private EaseType easeType;
     [SerializeField]
@@ -24,16 +26,7 @@ public class GrowOnCollision : MonoBehaviour
         originalScale = transform.localScale;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        Ball ball = other.GetComponent<Ball>();
-        if (ball != null)
-        {
-            StartCoroutine(Scale());
-        }
-    }
-
-    IEnumerator Scale()
+    public IEnumerator Scale()
     {
         float t = 0f;
         Vector3 targetScale = scaleBy * originalScale;
