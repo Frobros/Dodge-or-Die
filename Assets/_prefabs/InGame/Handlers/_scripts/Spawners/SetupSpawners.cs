@@ -9,10 +9,10 @@ public class SetupSpawners : MonoBehaviour
     [SerializeField]
     private GameObject player1, player2, enemyAI;
 
-    public void AssignAndSpawnPlayers(PlayerMode mode)
+    public void AssignAndSpawnPlayers(PlayMode mode)
     {
         spawnPlayer1.Player = player1;
-        if (mode == PlayerMode.TWO_PLAYER)
+        if (mode == PlayMode.TWO_PLAYER)
         {
             spawnPlayer2.Player = player2;
         } 
@@ -31,13 +31,13 @@ public class SetupSpawners : MonoBehaviour
      * Therefore this work-around is necessary.
      * https://forum.unity.com/threads/2-players-on-same-input-device.763949/
      */
-    private void RepairInputDevice(GameObject currentPlayer1, GameObject currentPlayer2, PlayerMode mode)
+    private void RepairInputDevice(GameObject currentPlayer1, GameObject currentPlayer2, PlayMode mode)
     {
         PlayerInput input1 = currentPlayer1.GetComponent<PlayerInput>();
         input1.user.UnpairDevices();
         InputUser.PerformPairingWithDevice(Keyboard.current, input1.user);
         input1.user.ActivateControlScheme("KeyboardLeft");
-        if (mode == PlayerMode.TWO_PLAYER)
+        if (mode == PlayMode.TWO_PLAYER)
         {
             PlayerInput input2 = currentPlayer2.GetComponent<PlayerInput>();
             // Discard existing assignments.

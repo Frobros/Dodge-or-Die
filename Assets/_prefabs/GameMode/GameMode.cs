@@ -5,7 +5,7 @@ using DarkTonic.MasterAudio;
 public class GameMode : MonoBehaviour
 {
     [SerializeField]
-    private PlayerMode mode;
+    private PlayMode mode;
 
     [SerializeField]
     [Range(5, 20)]
@@ -75,7 +75,7 @@ public class GameMode : MonoBehaviour
     }
     public void OnSelectPlayMode(int _mode)
     {
-        mode = (PlayerMode) _mode;
+        mode = (PlayMode) _mode;
     }
 
     private void OnChangeBallSpeed(System.Single _ballSpeed)
