@@ -62,8 +62,8 @@ public class Ball : MonoBehaviour
             trail.time = Mathf.Clamp(trail.time - 0.01f, 0f, 0.5f);
         }
 
-        Vector2 velocity = rb.velocity + drag;
-        rb.velocity = speed * velocity.normalized;
+        Vector2 velocity = rb.linearVelocity + drag;
+        rb.linearVelocity = speed * velocity.normalized;
     }
 
     private void OnTriggerExit2D(Collider2D collider)
