@@ -19,11 +19,13 @@ public class InterpolateScaleWall : MonoBehaviour
     [SerializeField]
     private float tScaleFor;
 
+    [SerializeField]
+    private Transform meshTransform;
     private Vector3 originalScale;
 
     private void Start()
     {
-        originalScale = transform.localScale;
+        originalScale = meshTransform.localScale;
     }
 
     public IEnumerator Scale()
@@ -33,7 +35,7 @@ public class InterpolateScaleWall : MonoBehaviour
 
         while (t < tScaleFor)
         {
-            transform.localScale = Vector3.Lerp(originalScale, targetScale, Ease(t / tScaleFor));
+            meshTransform.localScale = Vector3.Lerp(originalScale, targetScale, Ease(t / tScaleFor));
             t += Time.deltaTime;
             yield return null;
         }

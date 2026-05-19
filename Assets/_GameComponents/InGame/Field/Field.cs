@@ -7,6 +7,13 @@ public class Field : MonoBehaviour
     private Transform field1;
     [SerializeField]
     private Transform field2;
+
+    [SerializeField]
+    private float fieldWidth = 16f;
+
+    [SerializeField]
+    private float fieldHeight = 16f;
+
     [SerializeField]
     private int points = 0;
 
@@ -19,11 +26,12 @@ public class Field : MonoBehaviour
     {
         stageManager = FindObjectOfType<StageManager>();
 
-        field1.localPosition = new Vector3(-0.25f, 0f, -0.01f);
-        field2.localPosition = new Vector3(0.25f, 0f, -0.01f);
 
-        field1.localScale = new Vector3(0.5f, 1f, 1f);
-        field2.localScale = new Vector3(0.5f, 1f, 1f);
+        field1.localPosition = new Vector3(-fieldWidth * 0.5f, 0f, -0.01f);
+        field2.localPosition = new Vector3(fieldWidth * 0.5f, 0f, -0.01f);
+
+        field1.localScale = new Vector3(fieldWidth, fieldHeight, 1f);
+        field2.localScale = new Vector3(fieldWidth, fieldHeight, 1f);
     }
 
 
@@ -50,16 +58,16 @@ public class Field : MonoBehaviour
             float changeIn = 0.3f;
             float timePassed = 0f;
 
-            float conquerRatio = 0.5f / pointsToWin;
-            float conquered = 0.25f * points / pointsToWin;
+            float conquerRatio = fieldWidth / pointsToWin;
+            float conquered = (fieldWidth * 0.5f) * points / pointsToWin;
 
             Vector3 startPosition1 = field1.localPosition,
                 startPosition2 = field2.localPosition;
             Vector3 startScale1 = field1.localScale,
                 startScale2 = field2.localScale;
 
-            Vector3 targetPosition1 = new Vector3(-0.25f + conquered, 0f, -0.01f),
-                targetPosition2 = new Vector3(0.25f + conquered, 0f, -0.01f);
+            Vector3 targetPosition1 = new Vector3(-fieldWidth * 0.5f + conquered, 0f, -0.01f),
+                targetPosition2 = new Vector3(fieldWidth * 0.5f + conquered, 0f, -0.01f);
             Vector3 targetScale1 = startScale1,
                 targetScale2 = startScale2;
 

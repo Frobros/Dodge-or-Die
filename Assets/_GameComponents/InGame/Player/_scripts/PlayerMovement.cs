@@ -39,11 +39,11 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         if (!isHit)
-            rb.linearVelocity = speed * Direction;
+            rb.velocity = speed * Direction;
         else
         {
             isHit = Time.time < freezeUntil;
-            rb.linearVelocity = rb.linearVelocity * Damp(damping);
+            rb.velocity = rb.velocity * Damp(damping);
         }
     }
 
@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
     internal void Hit(Vector3 position)
     {
         Vector2 hitDirection = transform.position - position;
-        rb.linearVelocity = Vector2.zero;
+        rb.velocity = Vector2.zero;
         rb.AddForce(10f * hitDirection, ForceMode2D.Impulse);
         freezeUntil = Time.time + freezeFor;
         isHit = true;
